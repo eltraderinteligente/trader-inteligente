@@ -1,0 +1,21 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../../i18n/utils';
+
+// CFTC Rule 4.41. Required wherever hypothetical or backtested results are
+// shown — a chart, a screenshot, a strategy write-up, a course module.
+// Nothing on the site shows simulated results today, so nothing renders this
+// yet. If you ever add one, add this next to it.
+// [[LEGAL — draft wording. A lawyer must review this before launch.]]
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<aside
+  aria-labelledby="simulated-results-heading"
+  class="border-line bg-panel text-muted mt-8 rounded-md border p-5 text-xs leading-relaxed"
+>
+  <h2 id="simulated-results-heading" class="text-heading font-sans text-xs font-semibold">
+    {t('disclaimers.simulatedHeading')}
+  </h2>
+  <p class="mt-2">{t('disclaimers.simulated')}</p>
+</aside>

@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import BlogPost from '../../components/pages/BlogPost.astro';
+import { getPosts, slugOf, findTranslationSlug } from '../../lib/content';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  counterpartSlug?: string;
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPosts('es');
+  return Promise.all(
+    posts.map(async (entry) => ({
+      params: { slug: slugOf(entry) },
+      props: {
+        entry,
+        counterpartSlug: await findTranslationSlug(
+          'blog',
+          entry.data.translationKey,
+          'en',
+        ),
+      },
+    })),
+  );
+};
+
+const { entry, counterpartSlug } = Astro.props;
+---
+
+<BlogPost entry={entry} locale="es" counterpartSlug={counterpartSlug} />

@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Locale } from '../../config/site';
+import { useTranslations, alternatesForRoute, formatDate, isoDate } from '../../i18n/utils';
+import { route, dynamicRoute } from '../../i18n/routes';
+import { getPosts, getApprovedReviews, courseTitles, slugOf } from '../../lib/content';
+import type { TranslationKey } from '../../i18n/utils';
+import ReviewCard from '../ReviewCard.astro';
+import TestimonialDisclaimer from '../legal/TestimonialDisclaimer.astro';
+import FaqList from '../FaqList.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const posts = (await getPosts(locale)).slice(0, 3);
+const reviews = (await getApprovedReviews(locale))
+  .filter((r) => r.data.featured)
+  .slice(0, 3);
+const titles = await courseTitles(locale);
+const titleFor = (key: string) =>
+  key === 'mentoria' ? t('courses.tiers.mentoria') : (titles.get(key) ?? key);
+
+/**
+ * The three steps of the mentorship. Kept as translation keys rather than
+ * content files because there are three of them and they never change per
+ * student — if that stops being true they should become a collection.
+ */
+const STEPS = ['one', 'two', 'three'] as const;
+
+/**
+ * Six of the nineteen questions from /preguntas. Chosen as the ones that stop
+ * someone buying rather than the ones that get searched for — the full list
+ * lives on its own page, which is where the search traffic lands.
+ */
+const FAQ_ON_HOME = [
+  'experience',
+  'howLong',
+  'format',
+  'signals',
+  'guarantee',
+  'scam',
+] as const;
+
+// Every section is a placeholder block until real copy exists, so the page
+// never ships invented claims.
+const Placeholder = 'p';
+---
+
+<BaseLayout
+  title={t('site.name')}
+  description={t('meta.defaultDescription')}
+  alternates={alternatesForRoute('home')}
+>
+  {/* 1 — Hero */}
+  <section class="mx-auto max-w-6xl px-4 py-24 sm:py-32">
+    <p class="eyebrow">{t('home.hero.eyebrow')}</p>
+    <h1 class="mt-5 max-w-3xl text-4xl font-semibold text-balance sm:text-5xl">
+      {t('home.hero.title')}
+    </h1>
+    <p class="text-body mt-6 max-w-2xl text-lg leading-relaxed">
+      {t('home.hero.body')}
+    </p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a href={route('mentoring', locale)} class="btn-primary">
+        {t('home.hero.primaryCta')}
+      </a>
+    </div>
+  </section>
+
+  {/* 2 — Trust band */}
+  <section class="border-line bg-canvas-deep border-y">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="eyebrow font-sans">{t('home.trust.heading')}</h2>
+      <Placeholder class="text-body mt-4 max-w-3xl">
+        {t('home.trust.note')}
+      </Placeholder>
+    </div>
+  </section>
+
+  {/* 3 — The one product: how the mentorship works */}
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="text-2xl font-semibold sm:text-3xl">
+      {t('home.program.heading')}
+    </h2>
+    <p class="text-body mt-4 max-w-2xl leading-relaxed">
+      {t('home.program.body')}
+    </p>
+
+    <ol class="mt-10 grid gap-5 sm:grid-cols-3">
+      {
+        STEPS.map((step) => (
+          <li class="card">
+            <p class="eyebrow font-sans text-muted">
+              {t(`home.program.steps.${step}.label` as TranslationKey)}
+            </p>
+            <h3 class="text-heading mt-3 font-medium">
+              {t(`home.program.steps.${step}.title` as TranslationKey)}
+            </h3>
+            <p class="text-body mt-3 text-sm leading-relaxed">
+              {t(`home.program.steps.${step}.body` as TranslationKey)}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+
+    {/*
+      Capacity is a real constraint of small-group teaching, not a scarcity
+      tactic. Stated plainly, with no counter and no deadline, because a
+      countdown is exactly the pattern this site is built to avoid.
+    */}
+    <p class="border-line text-body mt-10 max-w-2xl border-l-2 pl-5 leading-relaxed">
+      {t('home.program.capacity')}
+    </p>
+
+    <a href={route('mentoring', locale)} class="btn-primary mt-10">
+      {t('home.program.cta')}
+    </a>
+  </section>
+
+  {/* 6 — Founder bio */}
+  <section class="border-line bg-canvas-deep border-y">
+    <div class="mx-auto max-w-6xl px-4 py-20">
+      <h2 class="text-2xl font-semibold sm:text-3xl">
+        {t('home.about.heading')}
+      </h2>
+      <Placeholder class="text-body mt-4 max-w-2xl leading-relaxed">
+        {t('home.about.body')}
+      </Placeholder>
+      <a href={route('about', locale)} class="link-quiet mt-6 inline-block text-sm underline">
+        {t('home.about.cta')}
+      </a>
+    </div>
+  </section>
+
+  {/* 7 — Reviews. Phase 5 adds the cards and the required disclaimer. */}
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <h2 class="text-2xl font-semibold sm:text-3xl">
+      {t('home.reviews.heading')}
+    </h2>
+    {
+      reviews.length === 0 ? (
+        <p class="text-muted mt-4">[[REVIEW PLACEHOLDER]]</p>
+      ) : (
+        <div class="mt-8 space-y-8">
+          <ul class="grid gap-6 sm:grid-cols-3">
+            {reviews.map((review) => (
+              <li>
+                <ReviewCard
+                  review={review}
+                  locale={locale}
+                  courseTitle={titleFor(review.data.course)}
+                />
+              </li>
+            ))}
+          </ul>
+          {/* FTC: a disclaimer must sit next to the testimonials themselves. */}
+          <TestimonialDisclaimer />
+        </div>
+      )
+    }
+    <a href={route('reviews', locale)} class="link-quiet mt-6 inline-block text-sm underline">
+      {t('home.reviews.cta')}
+    </a>
+  </section>
+
+  {/* 8 — Recent blog posts */}
+  <section class="border-line bg-canvas-deep border-y">
+    <div class="mx-auto max-w-6xl px-4 py-20">
+      <h2 class="text-2xl font-semibold sm:text-3xl">
+        {t('home.blog.heading')}
+      </h2>
+      {
+        posts.length === 0 ? (
+          <p class="text-muted mt-4">{t('blog.empty')}</p>
+        ) : (
+          <ul class="mt-8 grid gap-8 sm:grid-cols-3">
+            {posts.map((post) => (
+              <li>
+                <time
+                  datetime={isoDate(post.data.pubDate)}
+                  class="text-muted text-xs"
+                >
+                  {formatDate(post.data.pubDate, locale)}
+                </time>
+                <h3 class="mt-2 text-lg font-semibold">
+                  <a
+                    href={dynamicRoute('blogPost', locale, slugOf(post))}
+                    class="hover:decoration-accent underline-offset-4 hover:underline"
+                  >
+                    {post.data.title}
+                  </a>
+                </h3>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <a href={route('blog', locale)} class="link-quiet mt-8 inline-block text-sm underline">
+        {t('home.blog.cta')}
+      </a>
+    </div>
+  </section>
+
+  {/* 9 — FAQ */}
+  <section class="mx-auto max-w-3xl px-4 py-20">
+    <h2 class="text-2xl font-semibold sm:text-3xl">
+      {t('home.faq.heading')}
+    </h2>
+    <div class="mt-8">
+      <FaqList locale={locale} items={FAQ_ON_HOME} />
+    </div>
+    <a href={route('faq', locale)} class="link-quiet mt-8 inline-block text-sm underline">
+      {t('home.faq.cta')}
+    </a>
+  </section>
+
+  {/* 10 — Footer with the legal block is rendered by BaseLayout. */}
+</BaseLayout>

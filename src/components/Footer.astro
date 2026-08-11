@@ -1,0 +1,84 @@
+---
+import { SITE } from '../config/site';
+import EmailSignup from './EmailSignup.astro';
+import RiskDisclaimer from './legal/RiskDisclaimer.astro';
+import { getLocaleFromUrl, useTranslations } from '../i18n/utils';
+import { route, type RouteKey } from '../i18n/routes';
+import type { TranslationKey } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const year = new Date().getFullYear();
+
+const COLUMNS: { heading: TranslationKey; links: { key: RouteKey; label: TranslationKey }[] }[] = [
+  {
+    heading: 'footer.sections.learn',
+    links: [
+      { key: 'mentoring', label: 'nav.mentoring' },
+      { key: 'guides', label: 'nav.guides' },
+      { key: 'tools', label: 'nav.tools' },
+    ],
+  },
+  {
+    heading: 'footer.sections.company',
+    links: [
+      { key: 'about', label: 'nav.about' },
+      { key: 'blog', label: 'nav.blog' },
+      { key: 'reviews', label: 'nav.reviews' },
+      { key: 'contact', label: 'nav.contact' },
+    ],
+  },
+  {
+    heading: 'footer.sections.legal',
+    links: [
+      { key: 'riskDisclosure', label: 'legal.riskDisclosure' },
+      { key: 'terms', label: 'legal.terms' },
+      { key: 'privacy', label: 'legal.privacy' },
+      { key: 'cookies', label: 'legal.cookies' },
+    ],
+  },
+];
+---
+
+<footer class="border-line bg-canvas-deep mt-24 border-t">
+  <div class="mx-auto max-w-6xl px-4 py-14">
+    <div class="mb-14 max-w-md">
+      <EmailSignup
+        list="waitlist"
+        locale={locale}
+        heading={t('email.waitlistHeading')}
+        body={t('email.waitlistBody')}
+        consent={t('email.waitlistConsent')}
+        submitLabel={t('email.waitlistSubmit')}
+        compact
+      />
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-3">
+      {
+        COLUMNS.map((col) => (
+          <div>
+            <h2 class="text-muted font-sans mb-4 text-xs font-semibold tracking-[0.16em] uppercase">
+              {t(col.heading)}
+            </h2>
+            <ul class="space-y-2.5 text-sm">
+              {col.links.map((link) => (
+                <li>
+                  <a href={route(link.key, locale)} class="link-quiet">
+                    {t(link.label)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <RiskDisclaimer />
+
+    <p class="border-line text-muted mt-12 border-t pt-6 text-xs">
+      &copy; {year} {SITE.legalEntity}. {t('footer.rights')}
+    </p>
+  </div>
+</footer>

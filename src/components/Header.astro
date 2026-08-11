@@ -1,0 +1,91 @@
+---
+import type { Locale } from '../config/site';
+import { getLocaleFromUrl, useTranslations } from '../i18n/utils';
+import { route, type RouteKey } from '../i18n/routes';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import type { TranslationKey } from '../i18n/utils';
+
+interface Props {
+  alternates: Record<Locale, string>;
+}
+
+const { alternates } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+const NAV: { key: RouteKey; label: TranslationKey }[] = [
+  { key: 'mentoring', label: 'nav.mentoring' },
+  { key: 'faq', label: 'nav.faq' },
+  { key: 'blog', label: 'nav.blog' },
+  { key: 'about', label: 'nav.about' },
+  { key: 'contact', label: 'nav.contact' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) =>
+  currentPath === href.replace(/\/$/, '') ||
+  (href !== '/' && href !== '/en' && currentPath.startsWith(href + '/'));
+---
+
+<header class="border-line border-b">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
+    <a
+      href={route('home', locale)}
+      class="font-display text-heading text-lg font-semibold tracking-tight"
+    >
+      {t('site.name')}
+    </a>
+
+    <nav aria-label={t('nav.primaryLabel')} class="hidden md:block">
+      <ul class="flex items-center gap-6 text-sm">
+        {
+          NAV.map(({ key, label }) => {
+            const href = route(key, locale);
+            return (
+              <li>
+                <a
+                  href={href}
+                  aria-current={isCurrent(href) ? 'page' : undefined}
+                  class="text-muted hover:text-heading hover:decoration-accent aria-[current=page]:text-heading aria-[current=page]:decoration-accent border-b-2 border-transparent pb-0.5 transition-colors hover:border-b-accent aria-[current=page]:border-b-accent"
+                >
+                  {t(label)}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+
+    {/*
+      No login button. Students get their session recordings in a private
+      folder shared with them directly, so there is nowhere for a "my course"
+      link to point. A button that goes nowhere costs more trust than a
+      missing one. Put it back if a course platform is ever adopted.
+    */}
+    <div class="flex items-center gap-4">
+      <LanguageSwitcher alternates={alternates} />
+    </div>
+  </div>
+
+  <nav aria-label={t('nav.primaryLabel')} class="border-line border-t md:hidden">
+    <ul class="mx-auto flex max-w-6xl gap-4 overflow-x-auto px-4 py-2 text-sm">
+      {
+        NAV.map(({ key, label }) => {
+          const href = route(key, locale);
+          return (
+            <li class="shrink-0">
+              <a
+                href={href}
+                aria-current={isCurrent(href) ? 'page' : undefined}
+                class="text-muted aria-[current=page]:text-heading aria-[current=page]:border-b-accent border-b-2 border-transparent pb-0.5"
+              >
+                {t(label)}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</header>

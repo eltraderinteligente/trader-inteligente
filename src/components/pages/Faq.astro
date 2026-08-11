@@ -1,0 +1,111 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FaqList from '../FaqList.astro';
+import type { Locale } from '../../config/site';
+import {
+  useTranslations,
+  alternatesForRoute,
+  type TranslationKey,
+} from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+/**
+ * Grouped rather than one long list, because the three groups answer three
+ * different worries: "is this for someone like me", "what am I actually
+ * buying", and "are you honest". A reader usually only has one of them.
+ */
+const GROUPS = [
+  {
+    heading: 'faq.sections.basics',
+    items: [
+      'whatIsTrading',
+      'experience',
+      'howLong',
+      'platform',
+      'broker',
+      'markets',
+      'timeframes',
+    ],
+  },
+  {
+    heading: 'faq.sections.program',
+    items: [
+      'format',
+      'schedule',
+      'language',
+      'participate',
+      'missed',
+      'between',
+      'studyTime',
+      'after',
+      'places',
+    ],
+  },
+  {
+    heading: 'faq.sections.straight',
+    items: ['signals', 'guarantee', 'scam'],
+  },
+] as const;
+
+/*
+  FAQPage structured data. This is a machine-readable copy of the same
+  questions and answers, so a search engine can show them directly in the
+  results instead of only linking to the page. It is generated from the
+  translation file, so it can never drift out of step with what a visitor
+  reads — there is no second copy of the text to keep updated.
+*/
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: GROUPS.flatMap((group) =>
+    group.items.map((key) => ({
+      '@type': 'Question',
+      name: t(`faq.items.${key}.q` as TranslationKey),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: t(`faq.items.${key}.a` as TranslationKey),
+      },
+    })),
+  ),
+};
+---
+
+<PageLayout
+  title={t('faq.title')}
+  intro={t('faq.intro')}
+  alternates={alternatesForRoute('faq')}
+>
+  {
+    GROUPS.map((group, index) => (
+      <section class={index === 0 ? '' : 'mt-16'}>
+        <h2 class="text-xl font-semibold sm:text-2xl">
+          {t(group.heading as TranslationKey)}
+        </h2>
+        <div class="mt-6">
+          <FaqList locale={locale} items={group.items} />
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="mt-16">
+    <h2 class="text-xl font-semibold sm:text-2xl">{t('faq.stillHeading')}</h2>
+    <p class="text-body mt-4 leading-relaxed">{t('faq.still')}</p>
+    <a href={route('contact', locale)} class="btn-primary mt-8">
+      {t('faq.cta')}
+    </a>
+  </section>
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(faqSchema)}
+  />
+</PageLayout>

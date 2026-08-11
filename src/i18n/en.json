@@ -1,0 +1,476 @@
+{
+  "site": {
+    "name": "El Trader Inteligente",
+    "tagline": "Market structure training"
+  },
+  "nav": {
+    "home": "Home",
+    "mentoring": "Mentoring",
+    "guides": "Resources",
+    "tools": "Economic calendar",
+    "blog": "Blog",
+    "reviews": "Reviews",
+    "about": "About",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primaryLabel": "Main navigation",
+    "faq": "FAQ"
+  },
+  "language": {
+    "label": "Language",
+    "switchTo": "View this page in Spanish",
+    "current": "English",
+    "other": "Español",
+    "shortCurrent": "EN",
+    "shortOther": "ES"
+  },
+  "footer": {
+    "sections": {
+      "learn": "Learn",
+      "company": "The project",
+      "legal": "Legal"
+    },
+    "rights": "All rights reserved.",
+    "riskHeading": "Risk disclosure",
+    "educationalHeading": "Educational content"
+  },
+  "legal": {
+    "riskDisclosure": "Risk disclosure",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy"
+  },
+  "common": {
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "back": "Back",
+    "publishedOn": "Published on",
+    "updatedOn": "Updated on",
+    "minuteRead": "min read",
+    "skipToContent": "Skip to main content",
+    "loading": "Loading…",
+    "required": "required",
+    "comingSoon": "Coming soon",
+    "empty": "There is no published content here yet."
+  },
+  "meta": {
+    "defaultDescription": "Market structure training taught by Javier Andrade, a licensed Florida contractor who has been trading for fifteen years. Educational content only, with no promises of results."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Market structure training",
+      "title": "Market structure, taught by someone who learned it the hard way.",
+      "body": "Fifteen years trading. One single method: market structure. Nobody here tells you where, when or how to put your money — you learn to read the chart, and the decision is yours.",
+      "primaryCta": "See the mentorship"
+    },
+    "trust": {
+      "heading": "In short",
+      "note": "One method: market structure. The same chart everyone else is looking at, read a different way. It works the same in stocks, futures, forex and crypto."
+    },
+    "about": {
+      "heading": "Who is behind this",
+      "body": "I did not come from finance. I came from construction: I started very young and became a licensed general contractor and plumbing contractor in Florida. I have been trading for fifteen years, tried many methods, and learned most of it the hard way. In the end I kept one approach: market structure.",
+      "cta": "More about me"
+    },
+    "reviews": {
+      "heading": "What students say",
+      "cta": "See all reviews"
+    },
+    "blog": {
+      "heading": "Recent posts",
+      "cta": "Visit the blog"
+    },
+    "faq": {
+      "heading": "Frequently asked questions",
+      "cta": "See all the questions"
+    },
+    "program": {
+      "heading": "How the mentorship works",
+      "body": "About three months of live sessions, with a maximum of four students per session. You start from zero: you do not need to know anything about markets or to have ever opened a chart.",
+      "steps": {
+        "one": {
+          "label": "Month 1",
+          "title": "From zero",
+          "body": "An introduction to the markets and the vocabulary they use. What a swing is and how to recognise one on a chart. And the question everything else rests on: what market structure actually is."
+        },
+        "two": {
+          "label": "Month 2",
+          "title": "Structure from the inside",
+          "body": "Swing structure and internal structure. This is where the chart starts to read itself: you understand how a move is built instead of memorising patterns."
+        },
+        "three": {
+          "label": "Month 3",
+          "title": "Reading the whole chart",
+          "body": "Multi-timeframe analysis, supply and demand, ranges and entries. Everything above comes together, moving from understanding the chart to knowing where and why to act."
+        }
+      },
+      "capacity": "I never teach a session with more than four students. It is the number that lets me get to everyone within the same hour, which is why a place is not always available.",
+      "cta": "See the mentorship"
+    }
+  },
+  "courses": {
+    "title": "Courses",
+    "intro": "[[COURSES INTRO — needs real copy]]",
+    "tiers": {
+      "basico": "Beginner",
+      "intermedio": "Intermediate",
+      "avanzado": "Advanced",
+      "mentoria": "Mentoring"
+    },
+    "viewCourse": "View course",
+    "outcomes": "What you will learn",
+    "modules": "Course contents",
+    "faq": "Frequently asked questions",
+    "empty": "Courses will be published here."
+  },
+  "mentoring": {
+    "title": "Live mentorship",
+    "intro": "Learn market structure in live sessions with me, with a maximum of four students per session. We start from zero and move at your pace. It is not a recorded course you will half-watch: it is someone in front of the chart, answering you.",
+    "format": {
+      "heading": "How it works",
+      "sessions": {
+        "label": "Sessions",
+        "value": "Twice a week, eight a month"
+      },
+      "duration": {
+        "label": "Length",
+        "value": "One hour per session"
+      },
+      "format": {
+        "label": "Format",
+        "value": "Live on Zoom, with four students at most. Never a full classroom."
+      },
+      "recordings": {
+        "label": "Recordings",
+        "value": "You get the recording of every session"
+      },
+      "support": {
+        "label": "Between sessions",
+        "value": "A private Discord where you can ask me any day, not only in class."
+      },
+      "length": {
+        "label": "Programme",
+        "value": "About three months, depending on the person"
+      }
+    },
+    "price": {
+      "heading": "Price",
+      "per": " per month",
+      "note": "Includes the month’s eight sessions and their recordings. It is a monthly charge that renews on its own until you cancel, and you can cancel it yourself from the link in every receipt — without emailing me or asking permission. The month you cancel is the last one you are charged for. No minimum term and no penalty."
+    },
+    "capacity": {
+      "heading": "Four students maximum",
+      "body": "I never teach a session with more than four students. It is the number that lets me get to everyone within the same hour, so nobody is left holding a question. That is why a place is not always available."
+    },
+    "process": {
+      "heading": "How to start",
+      "steps": {
+        "one": "You write to me through the contact form and tell me where you are starting from.",
+        "two": "We talk with no obligation, to see whether this fits you and whether there is a place.",
+        "three": "If we both think it fits, we settle the schedule and I send you a payment link in your name. You start with the next intake."
+      }
+    },
+    "cta": "Apply for a place"
+  },
+  "guides": {
+    "title": "Resources",
+    "intro": "Free material to go alongside what I teach in class. No sign-up, no email required.",
+    "downloadsHeading": "Downloads",
+    "downloadsEmpty": "[[DOWNLOADS — pending. This is where Javier's PDFs will go: summaries, revision sheets, exercises.]]",
+    "booksHeading": "Books I recommend",
+    "booksIntro": "If a book is on this list it is because it helped me. The ones Amazon sells have a link; the ones it does not are on the list all the same.",
+    "booksEmpty": "[[BOOKS — Javier needs to supply the list. Do not invent titles.]]",
+    "by": "by",
+    "affiliateDisclosure": "Disclosure: the Amazon links on this page are affiliate links. If you buy through one, Amazon pays me a commission and it costs you nothing extra. No book is on this list because of the commission, and the price is the same as going to Amazon yourself. The links go to amazon.com (United States).",
+    "buyLink": "View on Amazon",
+    "affiliateMark": "(affiliate link)"
+  },
+  "tools": {
+    "title": "Economic calendar",
+    "intro": "The days and times the data that moves the market gets published. Free, no sign-up.",
+    "why": "Whatever method you use, there are moments in the day when price moves because of a release rather than because of anything you were reading on the chart. Knowing when that happens saves a good few frights.",
+    "loadHeading": "View the calendar",
+    "loadBody": "The calendar is provided by TradingView and loads from their servers. That is why it does not load on its own: press the button and it opens right here.",
+    "loadButton": "Load the calendar",
+    "loadNotice": "Loading it connects your browser to TradingView, which may set its own cookies.",
+    "howHeading": "How to read it",
+    "howBody": "Each row is a figure released at a specific time. The importance marker shows the ones that usually move price most. Next to each you will see what was expected and what came out: the gap between those two numbers is what the market reacts to, not the number itself.",
+    "disclaimer": "This calendar is for information. It does not tell you what to do, or when to enter or leave the market, and it does not suggest that trading around a news release is a good idea.",
+    "earningsHeading": "Earnings calendar",
+    "earningsBody": "The other calendar people watch is the earnings calendar: the day a company publishes its quarterly results. Every company does this four times a year, so across the market as a whole it is not an occasional event but four seasons — nearly all the large US companies report within the same few weeks.",
+    "earningsSeasonsHeading": "The four seasons",
+    "earningsSeasons": {
+      "jan": {
+        "label": "Mid-January to mid-February",
+        "window": "Fourth-quarter results from the previous year. The longest season and the one that moves the most, because many companies also give guidance for the year ahead."
+      },
+      "apr": {
+        "label": "Mid-April to mid-May",
+        "window": "First-quarter results."
+      },
+      "jul": {
+        "label": "Mid-July to mid-August",
+        "window": "Second-quarter results."
+      },
+      "oct": {
+        "label": "Mid-October to mid-November",
+        "window": "Third-quarter results."
+      }
+    },
+    "earningsWhy": "Outside those windows a few companies report most weeks, but only a few. What matters to you is simple: if you are holding a stock, check whether it reports before you plan to close the position. An earnings announcement moves the price all at once, often outside normal trading hours, and no amount of reading the chart sees it coming.",
+    "earningsLinkButton": "Open the earnings calendar on TradingView",
+    "earningsLinkNote": "This opens TradingView in a new tab. I cannot embed it here the way the economic calendar is embedded: TradingView does not offer an earnings version for other websites. Sending you to the real thing beats copying dates by hand and letting them go stale."
+  },
+  "blog": {
+    "title": "Blog",
+    "intro": "One idea per post, explained the way I explain it in class. Start with the first and read them in order — each one builds on the last. No signals, no promises, and nothing to buy in order to read them.",
+    "empty": "There are no posts yet.",
+    "backToBlog": "Back to the blog",
+    "by": "By"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "intro": "[[REVIEWS INTRO — needs real copy]]",
+    "filterLabel": "Filter by course",
+    "all": "All courses",
+    "empty": "There are no published reviews yet.",
+    "ratingLabel": "Rating",
+    "outOf": "out of 5",
+    "courseLabel": "Course",
+    "submitHeading": "Leave a review",
+    "compensatedNotice": "This person received compensation or free access in exchange for their review.",
+    "disclaimer": "Reviews describe the individual experience of each student and are not representative of, or a guarantee of, any result. Results vary from person to person. This content is educational and is not investment advice.",
+    "submitIntro": "If you have taken one of the courses, you can share your experience. Every review is checked before it is published.",
+    "moderationNotice": "No review is published automatically. We read it first, and it only appears on the site if you give permission.",
+    "notConfigured": "[[FORM — destination not connected yet. See src/config/forms.ts]]",
+    "form": {
+      "name": "Your name",
+      "nameHelp": "This appears next to your review exactly as you write it here.",
+      "email": "Your email address",
+      "emailHelp": "Not published. We only use it to reach you if we need to.",
+      "course": "Which course did you take?",
+      "coursePlaceholder": "Choose a course",
+      "rating": "Your rating",
+      "stars": "stars",
+      "star": "star",
+      "review": "Your review",
+      "reviewHelp": "Tell us what you learned and how the experience was.",
+      "compensated": "Did you receive anything in exchange for this review (a discount, free access, payment or a gift)?",
+      "compensatedYes": "Yes",
+      "compensatedNo": "No",
+      "compensatedHelp": "The law requires this to be disclosed. Answering “yes” does not stop it being published.",
+      "consent": "I give permission for my review and my name to be published on this website.",
+      "consentHelp": "Without this permission we cannot publish it.",
+      "submit": "Send review"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "intro": "My name is Javier Andrade, I live in Florida, and I have been trading the markets for fifteen years. I did not come from finance.",
+    "photoAlt": "Javier Andrade",
+    "photoPending": "[[PHOTO — needs a real photo of Javier. No stock images.]]",
+    "storyHeading": "Where I come from",
+    "story": "I started working in construction very young. Over the years I earned two Florida licences: general contractor and plumbing contractor. That means estimates that add up or do not, deadlines you meet or you do not, and jobs where the person who gets it wrong pays for it themselves. That is where I learned to work with a method, long before I knew what a chart was.",
+    "marketsHeading": "How I got to the markets",
+    "markets": "I came to the markets fifteen years ago and, like almost everyone, I started by trying everything: indicators, systems, strategies that worked for a month and stopped working the next. I learned most of it the hard way, by losing. I do not tell you that as an anecdote. I tell you because it is the part almost nobody teaches, and it is exactly what you are going to go through.",
+    "methodHeading": "Why I only teach one thing",
+    "method": "Over time I was left with a single approach: market structure. Not because it is magic, but because it was the only thing that kept working when the market changed, or the asset changed, or the year changed. It is the same chart everyone else is looking at, read differently, and it works the same in stocks, futures, forex or crypto. That is what I teach, and nothing else. I would rather you leave knowing how to do one thing properly than having skimmed twenty.",
+    "teachingHeading": "How I teach",
+    "teaching": "I teach the classes myself, live, with a maximum of four students per session, because with more than that you cannot get to everyone inside the same hour. We start from zero: I assume nothing. And I say from day one what I think needs saying — this is hard, it takes time, and anyone promising you otherwise is selling you something.",
+    "notHeading": "What I do not do",
+    "not": "I do not give signals. I do not manage anyone's money. I am not going to tell you where, when or how to put your money, and I am not going to show you accounts or results to convince you. What I do is teach you to read the chart so that you decide. If what you want is somebody to decide for you, I am not the right person.",
+    "licenceHeading": "About the licences",
+    "licence": "My contractor licences are in construction, not finance. They do not qualify me as an investment adviser and are not meant to. I mention them because they are public and checkable on the State of Florida register, and because they say something about how I work. Nothing more.",
+    "ctaHeading": "Shall we talk?",
+    "cta": "If you want to know whether this fits you, write to me and we will look at it with no obligation.",
+    "ctaButton": "Write to me"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "There are four places and I choose who I work with, so we talk before you join. I want to know where you are coming from, and you want to know whether this is any use to you.",
+    "apply": {
+      "heading": "Apply for a place",
+      "intro": "Fill this in and I will write back to arrange a short call. Nothing is paid at this step and you are not committing to anything. If there is no place right now I will tell you, and let you know when the next one opens.",
+      "notConfigured": "[[FORM — destination not connected yet. See src/config/forms.ts]]",
+      "form": {
+        "name": "Name",
+        "nameHelp": "What you would like to be called.",
+        "email": "Email",
+        "emailHelp": "Where I reply. I do not share it with anyone.",
+        "language": "Which language do you want the sessions in?",
+        "languageEs": "Spanish",
+        "languageEn": "English",
+        "languageHelp": "The groups run separately. I do not mix languages within a session.",
+        "location": "Where are you joining from?",
+        "locationHelp": "Country or city is enough. Sessions are arranged on US Eastern Time.",
+        "experience": "How much have you traded so far?",
+        "experienceNone": "I have never traded",
+        "experienceSome": "I have tried on my own",
+        "experienceYears": "I have been trading a while",
+        "experienceHelp": "No answer is better than another. I start from the beginning either way.",
+        "goal": "Why do you want to do this now?",
+        "goalHelp": "Two or three sentences is plenty. This is the part I read most closely.",
+        "availability": "Which days and hours work for you?",
+        "availabilityHelp": "Roughly. The schedule gets settled between the four people in the group.",
+        "consent": "I agree to you emailing me at this address to answer my application.",
+        "consentHelp": "For that only. You are not added to any list and you will not get promotions.",
+        "submit": "Send application"
+      }
+    },
+    "noSale": {
+      "heading": "Nothing is paid here",
+      "body": "There is deliberately no buy button on this website. If we both decide it makes sense after talking, I send you a payment link in your name. That way nobody pays for a place that does not exist."
+    },
+    "other": {
+      "heading": "Just want to ask something?",
+      "body": "If your question is not about joining the mentorship, email me directly at the address below. Before you do, have a look at the FAQ — a good part of it is answered there already.",
+      "faqLink": "See the FAQ"
+    }
+  },
+  "thankYou": {
+    "title": "Thank you",
+    "intro": "[[POST-PURCHASE MESSAGE — needs real copy, including next steps and how to access the course]]",
+    "cta": "Back to homepage",
+    "stepsHeading": "What happens next",
+    "steps": "[[POST-PURCHASE STEPS — needs real copy: when the email arrives, which address it comes from, how to log in to the platform, and who to contact if something goes wrong]]",
+    "supportHeading": "Nothing arrived?",
+    "support": "[[SUPPORT — needs the real contact email and response time]]"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you are looking for does not exist or has moved.",
+    "cta": "Go to homepage"
+  },
+  "offers": {
+    "buy": "Buy the course",
+    "securePayment": "Payment is processed by our platform. This website never stores your card details.",
+    "notOnSale": "[[PRICE AND CHECKOUT — not configured yet. See src/config/offers.ts]]"
+  },
+  "email": {
+    "nameLabel": "Your name",
+    "nameHelp": "Only so the emails can greet you by name.",
+    "emailLabel": "Your email address",
+    "submit": "Send it to me",
+    "consent": "I agree to receive emails with lessons, articles and news about new courses.",
+    "consentHelp": "You can unsubscribe at any time using the link in every email.",
+    "doubleOptIn": "We will send you an email to confirm your address. Until you click that link you will receive nothing else.",
+    "privacyNote": "You can read how we handle your data in our",
+    "noSpam": "We never sell or share your email address.",
+    "notConfigured": "[[EMAIL — destination not connected yet. See src/config/email.ts]]",
+    "waitlistHeading": "Tell me when a place opens",
+    "waitlistBody": "I never teach sessions with more than four students, so there is not always room. Leave your email and I will write when the next intake opens. Nothing else: no newsletter, no promotions.",
+    "waitlistConsent": "I agree to be emailed when a place opens in the mentorship.",
+    "waitlistSubmit": "Let me know"
+  },
+  "disclaimers": {
+    "riskHeading": "Risk disclosure",
+    "riskShort": "Trading the financial markets carries a high level of risk and can result in the partial or total loss of the capital you invest. Leveraged products can produce rapid losses that exceed your initial deposit. The content on this website is educational only. It is not investment advice and not a recommendation to buy or sell anything, and its author is not a registered investment adviser. We do not manage or hold client funds. Past results do not guarantee future results, and individual results vary.",
+    "riskLink": "Read the full risk disclosure",
+    "educationalHeading": "Educational content",
+    "educationalOnly": "What is sold here is education — not signals, not money management, and not investment advice. No class, course or mentoring promises or guarantees a profit. The decisions you make in the market are yours alone, and the risk of loss is real.",
+    "simulatedHeading": "Simulated or hypothetical results",
+    "simulated": "Hypothetical or simulated performance results have certain inherent limitations. Unlike an actual performance record, simulated results do not represent actual trading and, because the trades have not been executed, may have under- or over-compensated for the impact of certain market factors. Simulated trading programs in general are also subject to the fact that they are designed with the benefit of hindsight. No representation is being made that any account will or is likely to achieve profits or losses similar to those shown.",
+    "notReviewedHeading": "Draft — not reviewed by a lawyer",
+    "notReviewed": "This text is a working draft and has not yet been reviewed by a lawyer. Do not publish it as final. Once it has been reviewed, set \"reviewedByLawyer\" to true in this page’s file.",
+    "lastUpdated": "Last updated"
+  },
+  "cookieBanner": {
+    "heading": "Cookies",
+    "body": "We use only the cookies needed for the website to work. If you accept, we may also use measurement cookies to learn which content is useful. You can change your mind at any time.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "label": "Cookie notice"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "intro": "The questions people ask me before they start, answered the way I answer them.",
+    "sections": {
+      "basics": "Before you start",
+      "program": "How the mentorship works",
+      "straight": "Straight answers"
+    },
+    "items": {
+      "whatIsTrading": {
+        "q": "What is trading, and how is it different from investing?",
+        "a": "Investing means buying something and holding it for years, expecting it to grow. Trading works with price movements over much shorter horizons: days, hours or minutes. Neither is better than the other, they are different crafts. Trading asks for more time, more study and more tolerance for risk."
+      },
+      "experience": {
+        "q": "Do I need experience or a finance background?",
+        "a": "No. The mentorship starts from zero and assumes nothing. My current students arrived having never opened a chart in their lives. What you do need is consistency: almost nobody quits because they cannot understand it, they quit because they cannot keep the rhythm."
+      },
+      "howLong": {
+        "q": "How long does it take to learn?",
+        "a": "The fundamentals take about three months of steady work. Reading a chart comfortably takes considerably longer than that: years, not weeks. I would rather tell you before you pay. Anyone promising you results in thirty days is selling you a fantasy."
+      },
+      "format": {
+        "q": "Are the classes live or recorded?",
+        "a": "Live, on Zoom, twice a week, one hour per session. It is not a recorded course: I am in front of the chart with you, at the same moment, and you can stop me whenever something is not clear. Every session is recorded and sent to you, but the recording is for review — it is not the product."
+      },
+      "schedule": {
+        "q": "What days and times are the sessions?",
+        "a": "We set the schedule with each group. I am in Florida, Eastern time, and since we are never more than four people it is realistic to find an hour that works for everyone, whether you are in the US, Mexico, Colombia, Chile or Spain."
+      },
+      "language": {
+        "q": "Are the sessions in English or Spanish?",
+        "a": "I run separate groups: one in Spanish and one in English. Nobody has to sit through a class in a language they only half-follow."
+      },
+      "participate": {
+        "q": "Do I have to speak or turn my camera on?",
+        "a": "The sessions are participative: you can ask, comment and interrupt me whenever you want, and that is what I expect. If some days you would rather just listen and type in the chat, that is fine too."
+      },
+      "missed": {
+        "q": "What if I miss a session?",
+        "a": "You get the recording of every session, so you can catch up. And if something in that class does not land, you ask in writing or we pick it up at the start of the next one."
+      },
+      "between": {
+        "q": "Can I ask questions between sessions?",
+        "a": "Yes. Students get access to a private Discord where they can write to me any time. A question does not have to wait until next Tuesday."
+      },
+      "markets": {
+        "q": "Which market do you teach: stocks, futures, forex or crypto?",
+        "a": "All of them. Market structure does not change with the asset: the same chart reads the same way in stocks, futures, forex or crypto. We look at several markets in the sessions, and over time each student settles on the one that suits them."
+      },
+      "timeframes": {
+        "q": "Is this for day trading or for longer holding periods?",
+        "a": "First you learn to read structure. We work on timeframes at the end of the third month, once you have something to decide with. Starting there would be picking a schedule before knowing what you plan to do with it."
+      },
+      "platform": {
+        "q": "What do I need in order to follow the classes?",
+        "a": "A computer, a stable connection and TradingView, whose free version covers everything we do. You do not need six monitors or paid software."
+      },
+      "broker": {
+        "q": "Do I need a broker before I start?",
+        "a": "No. Choosing the platform and getting it set up is part of the mentorship, we do it together. If you already have one, all the better."
+      },
+      "studyTime": {
+        "q": "How much time do I need outside the sessions?",
+        "a": "I do not set a minimum, but I give homework, and the people who do it move much faster. Looking at charts on your own between one session and the next is where the learning actually happens."
+      },
+      "after": {
+        "q": "What happens when the three months end?",
+        "a": "You decide. You can carry on another month if you feel you need it, or close there, and you can stay in the Discord if you want to keep in touch. There is no lock-in and nothing renews on its own."
+      },
+      "places": {
+        "q": "Is there a place available right now?",
+        "a": "It depends on the moment. I never teach a session with more than four students, so sometimes you have to wait for the next intake. Write to me and I will tell you how it stands; if there is no room, I will say so plainly."
+      },
+      "signals": {
+        "q": "Do you give signals or copy trading?",
+        "a": "No, and I do not intend to. Following someone else's signals might hand you the odd win, but it gives you no judgement: it leaves you depending on another person indefinitely. The goal here is that you read the chart without me."
+      },
+      "guarantee": {
+        "q": "Can you guarantee I will make money?",
+        "a": "No. Nobody honest can. What I teach is how to read the chart; what you do with that reading afterwards is yours, and so is the risk."
+      },
+      "scam": {
+        "q": "How do I know this is not a scam?",
+        "a": "It is a fair question and you should ask it of anyone selling financial education. What I can offer you: the price is published, the syllabus is published, you know who is teaching, and we talk on a video call before you pay anything. As a general rule, be wary of anyone showing luxury cars, guaranteeing profits, or rushing you with a countdown on the screen."
+      }
+    },
+    "stillHeading": "Still wondering something?",
+    "still": "If your question is not here, write to me and I will answer it myself. There is no sales team behind this.",
+    "cta": "Write to me"
+  }
+}

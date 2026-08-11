@@ -1,0 +1,43 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../config/site';
+import { useTranslations, alternatesForRoute } from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<PageLayout
+  title={t('thankYou.title')}
+  intro={t('thankYou.intro')}
+  alternates={alternatesForRoute('thankYou')}
+  noindex
+>
+  <section>
+    <h2 class="text-2xl font-semibold">{t('thankYou.stepsHeading')}</h2>
+    <p class="text-body mt-4 leading-relaxed">{t('thankYou.steps')}</p>
+    {/*
+      No platform link. Session recordings are shared privately with each
+      student, so there is no login to send anyone to.
+    */}
+  </section>
+
+  <section class="border-line mt-14 border-t pt-14">
+    <h2 class="text-2xl font-semibold">{t('thankYou.supportHeading')}</h2>
+    <p class="text-body mt-4 leading-relaxed">{t('thankYou.support')}</p>
+    <a href={route('contact', locale)} class="link-quiet mt-6 inline-block text-sm underline">
+      {t('nav.contact')}
+    </a>
+  </section>
+
+  <p class="mt-14">
+    <a href={route('home', locale)} class="link-quiet text-sm underline">
+      {t('thankYou.cta')}
+    </a>
+  </p>
+</PageLayout>

@@ -1,0 +1,145 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ReviewCard from '../ReviewCard.astro';
+import ReviewForm from '../ReviewForm.astro';
+import TestimonialDisclaimer from '../legal/TestimonialDisclaimer.astro';
+import type { Locale } from '../../config/site';
+import { SITE } from '../../config/site';
+import { useTranslations, alternatesForRoute, isoDate } from '../../i18n/utils';
+import { getApprovedReviews, courseTitles } from '../../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const reviews = await getApprovedReviews(locale);
+const titles = await courseTitles(locale);
+
+// Mentoring is a page, not a course file, so it has no entry in the map.
+const titleFor = (key: string) =>
+  key === 'mentoria' ? t('courses.tiers.mentoria') : (titles.get(key) ?? key);
+
+// Only the courses that actually have a published review get a filter option.
+const filterOptions = [...new Set(reviews.map((r) => r.data.course))].map(
+  (key) => ({ key, label: titleFor(key) }),
+);
+
+const average =
+  reviews.length > 0
+    ? reviews.reduce((sum, r) => sum + r.data.rating, 0) / reviews.length
+    : 0;
+
+// Structured data is only emitted for reviews that are real, approved and
+// consented. With none published there is nothing to claim, so nothing is said.
+const structuredData =
+  reviews.length === 0
+    ? null
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: SITE.name,
+        url: SITE.url,
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: average.toFixed(1),
+          reviewCount: reviews.length,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        review: reviews.map((r) => ({
+          '@type': 'Review',
+          author: { '@type': 'Person', name: r.data.name },
+          datePublished: isoDate(r.data.date),
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.data.rating,
+            bestRating: 5,
+            worstRating: 1,
+          },
+          itemReviewed: { '@type': 'Course', name: titleFor(r.data.course) },
+        })),
+      };
+---
+
+<PageLayout
+  title={t('reviews.title')}
+  intro={t('reviews.intro')}
+  alternates={alternatesForRoute('reviews')}
+>
+  {
+    structuredData && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify(structuredData)}
+      />
+    )
+  }
+
+  <TestimonialDisclaimer />
+
+  {
+    reviews.length === 0 ? (
+      <p class="text-muted mt-10">{t('reviews.empty')}</p>
+    ) : (
+      <div class="mt-10">
+        {filterOptions.length > 1 && (
+          <div class="max-w-xs">
+            <label
+              class="text-heading block text-sm font-medium"
+              for="review-filter"
+            >
+              {t('reviews.filterLabel')}
+            </label>
+            <select
+              id="review-filter"
+              class="border-line bg-panel text-body focus:border-accent mt-2 w-full rounded-md border px-3 py-2 text-sm"
+            >
+              <option value="all">{t('reviews.all')}</option>
+              {filterOptions.map((option) => (
+                <option value={option.key}>{option.label}</option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {/* Every review is in the HTML. The filter only hides, so the list
+            still works with JavaScript turned off. */}
+        <ul id="review-list" class="mt-8 space-y-6">
+          {reviews.map((review) => (
+            <li data-course={review.data.course}>
+              <ReviewCard
+                review={review}
+                locale={locale}
+                courseTitle={titleFor(review.data.course)}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+
+  <div class="border-line mt-20 border-t pt-14">
+    <ReviewForm locale={locale} />
+  </div>
+</PageLayout>
+
+<script>
+  const filter = document.getElementById('review-filter');
+  const list = document.getElementById('review-list');
+
+  if (filter instanceof HTMLSelectElement && list) {
+    filter.addEventListener('change', () => {
+      const choice = filter.value;
+      for (const item of list.children) {
+        if (!(item instanceof HTMLElement)) continue;
+        const matches = choice === 'all' || item.dataset.course === choice;
+        item.hidden = !matches;
+      }
+    });
+  }
+</script>

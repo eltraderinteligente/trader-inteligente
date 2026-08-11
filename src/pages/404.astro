@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, alternatesForRoute } from '../i18n/utils';
+import { route } from '../i18n/routes';
+
+// A static host serves one 404 page for every unmatched URL, so this page
+// cannot know the visitor's language. It shows both.
+const es = useTranslations('es');
+const en = useTranslations('en');
+---
+
+<BaseLayout
+  title={es('notFound.title')}
+  alternates={alternatesForRoute('home')}
+  noindex
+>
+  <div class="mx-auto max-w-3xl px-4 py-24 text-center">
+    <h1 class="text-3xl font-semibold">{es('notFound.title')}</h1>
+    <p class="text-body mt-4">{es('notFound.body')}</p>
+    <a href={route('home', 'es')} class="btn-primary mt-8">
+      {es('notFound.cta')}
+    </a>
+
+    <hr class="border-line my-12" />
+
+    <h2 lang="en" class="text-xl font-semibold">{en('notFound.title')}</h2>
+    <p lang="en" class="text-body mt-4">{en('notFound.body')}</p>
+    <a
+      lang="en"
+      href={route('home', 'en')}
+      class="link-quiet mt-6 inline-block text-sm underline"
+    >
+      {en('notFound.cta')}
+    </a>
+  </div>
+</BaseLayout>

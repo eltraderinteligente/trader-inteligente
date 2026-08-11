@@ -1,0 +1,68 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ApplicationForm from '../ApplicationForm.astro';
+import { SITE, type Locale } from '../../config/site';
+import { useTranslations, alternatesForRoute } from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+/** Until a real address is set in src/config/site.ts, show it as a placeholder
+ * rather than as a mailto: link that opens an empty email to nobody. */
+const emailReady = !SITE.email.startsWith('[[');
+---
+
+<PageLayout
+  title={t('contact.title')}
+  intro={t('contact.intro')}
+  alternates={alternatesForRoute('contact')}
+>
+  {/*
+    Said before the form rather than after it. Someone about to type their
+    details wants to know whether a charge is coming, and the answer here is
+    no — the payment link is sent by hand after a conversation, so a place can
+    never be sold twice or sold to someone it does not suit.
+  */}
+  <aside class="border-line bg-panel-raised rounded-md border p-5">
+    <h2 class="text-heading text-base font-medium">
+      {t('contact.noSale.heading')}
+    </h2>
+    <p class="text-body mt-2 text-sm leading-relaxed">
+      {t('contact.noSale.body')}
+    </p>
+  </aside>
+
+  <div class="mt-14">
+    <ApplicationForm locale={locale} />
+  </div>
+
+  <section class="border-line mt-16 border-t pt-14">
+    <h2 class="text-xl font-semibold sm:text-2xl">
+      {t('contact.other.heading')}
+    </h2>
+    <p class="text-body mt-4 leading-relaxed">{t('contact.other.body')}</p>
+
+    <p class="mt-4">
+      {
+        emailReady ? (
+          <a class="link-quiet underline" href={`mailto:${SITE.email}`}>
+            {SITE.email}
+          </a>
+        ) : (
+          <span class="border-line bg-panel-raised text-muted inline-block rounded-md border border-dashed px-3 py-2 text-sm">
+            {SITE.email}
+          </span>
+        )
+      }
+    </p>
+
+    <a href={route('faq', locale)} class="link-quiet mt-6 inline-block text-sm underline">
+      {t('contact.other.faqLink')}
+    </a>
+  </section>
+</PageLayout>

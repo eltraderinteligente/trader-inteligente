@@ -1,0 +1,164 @@
+---
+import type { Locale } from '../config/site';
+import { useTranslations } from '../i18n/utils';
+import { FORMS, HONEYPOT_FIELD, isConfigured } from '../config/forms';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const action = FORMS.reviewAction;
+const ready = isConfigured(action);
+
+// A form with no destination would look like it worked and silently drop the
+// submission, so every control is disabled until an endpoint is set.
+const disabled = !ready;
+
+const RATINGS = [5, 4, 3, 2, 1];
+const field =
+  'border-line bg-panel text-body focus:border-accent w-full rounded-md border px-3 py-2 text-sm disabled:opacity-50';
+const labelClass = 'text-heading block text-sm font-medium';
+const helpClass = 'text-muted mt-1 text-xs';
+---
+
+<section aria-labelledby="review-form-heading">
+  <h2 id="review-form-heading" class="text-2xl font-semibold">
+    {t('reviews.submitHeading')}
+  </h2>
+  <p class="text-body mt-4 leading-relaxed">{t('reviews.submitIntro')}</p>
+  <p class="text-muted mt-2 text-sm">{t('reviews.moderationNotice')}</p>
+
+  {
+    !ready && (
+      <p class="border-line bg-panel-raised text-muted mt-6 rounded-md border border-dashed p-4 text-sm">
+        {t('reviews.notConfigured')}
+      </p>
+    )
+  }
+
+  <form
+    class="mt-8 space-y-6"
+    method="post"
+    action={ready ? action : undefined}
+    aria-describedby={ready ? undefined : 'review-form-unavailable'}
+  >
+    {/* Hidden from people, filled in by bots. Discarded by the form service. */}
+    <div class="hidden" aria-hidden="true">
+      <label for="hp">Company website</label>
+      <input id="hp" type="text" name={HONEYPOT_FIELD} tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div>
+      <label class={labelClass} for="review-name">{t('reviews.form.name')}</label>
+      <input
+        id="review-name"
+        name="name"
+        type="text"
+        required
+        disabled={disabled}
+        autocomplete="name"
+        class={`mt-2 ${field}`}
+      />
+      <p class={helpClass}>{t('reviews.form.nameHelp')}</p>
+    </div>
+
+    <div>
+      <label class={labelClass} for="review-email">{t('reviews.form.email')}</label>
+      <input
+        id="review-email"
+        name="email"
+        type="email"
+        required
+        disabled={disabled}
+        autocomplete="email"
+        class={`mt-2 ${field}`}
+      />
+      <p class={helpClass}>{t('reviews.form.emailHelp')}</p>
+    </div>
+
+    {/*
+      There is one product, so asking which one they took would be a question
+      with a single possible answer. Sent as a hidden value instead, which
+      keeps every stored review in the same shape as before — if a second
+      programme is ever added, this becomes a dropdown again.
+    */}
+    <input type="hidden" name="course" value="mentoria" />
+
+    <fieldset disabled={disabled}>
+      <legend class={labelClass}>{t('reviews.form.rating')}</legend>
+      <div class="mt-2 flex flex-wrap gap-4">
+        {
+          RATINGS.map((n) => (
+            <label class="text-body flex items-center gap-2 text-sm">
+              <input
+                type="radio"
+                name="rating"
+                value={n}
+                required
+                class="accent-action"
+              />
+              {n} {n === 1 ? t('reviews.form.star') : t('reviews.form.stars')}
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <div>
+      <label class={labelClass} for="review-body">{t('reviews.form.review')}</label>
+      <textarea
+        id="review-body"
+        name="review"
+        rows="6"
+        required
+        disabled={disabled}
+        class={`mt-2 ${field}`}></textarea>
+      <p class={helpClass}>{t('reviews.form.reviewHelp')}</p>
+    </div>
+
+    <fieldset disabled={disabled}>
+      <legend class={labelClass}>{t('reviews.form.compensated')}</legend>
+      <div class="mt-2 flex gap-4">
+        <label class="text-body flex items-center gap-2 text-sm">
+          <input type="radio" name="compensated" value="yes" required class="accent-action" />
+          {t('reviews.form.compensatedYes')}
+        </label>
+        <label class="text-body flex items-center gap-2 text-sm">
+          <input type="radio" name="compensated" value="no" required class="accent-action" />
+          {t('reviews.form.compensatedNo')}
+        </label>
+      </div>
+      <p class={helpClass}>{t('reviews.form.compensatedHelp')}</p>
+    </fieldset>
+
+    <div>
+      <label class="text-body flex items-start gap-3 text-sm">
+        <input
+          type="checkbox"
+          name="consentToPublish"
+          value="yes"
+          required
+          disabled={disabled}
+          class="accent-action mt-1"
+        />
+        <span>{t('reviews.form.consent')}</span>
+      </label>
+      <p class={`${helpClass} ml-7`}>{t('reviews.form.consentHelp')}</p>
+    </div>
+
+    <button type="submit" disabled={disabled} class="btn-primary disabled:opacity-50">
+      {t('reviews.form.submit')}
+    </button>
+
+    {
+      !ready && (
+        <p id="review-form-unavailable" class="sr-only">
+          {t('reviews.notConfigured')}
+        </p>
+      )
+    }
+  </form>
+</section>

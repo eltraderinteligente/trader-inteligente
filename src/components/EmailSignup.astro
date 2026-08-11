@@ -1,0 +1,138 @@
+---
+import type { Locale } from '../config/site';
+import { useTranslations } from '../i18n/utils';
+import { route } from '../i18n/routes';
+import { listAction, isListConfigured, type EmailListKey } from '../config/email';
+import { HONEYPOT_FIELD } from '../config/forms';
+
+interface Props {
+  list: EmailListKey;
+  locale: Locale;
+  heading?: string;
+  body?: string;
+  submitLabel?: string;
+  /**
+   * What the person is agreeing to receive. Overridable because consent has
+   * to describe the actual emails — a waiting list and a guide download are
+   * not the same promise, and one wording cannot honestly cover both.
+   */
+  consent?: string;
+  /** Footer variant: email and consent only, no name field. */
+  compact?: boolean;
+}
+
+const {
+  list,
+  locale,
+  heading,
+  body,
+  submitLabel,
+  consent,
+  compact = false,
+} = Astro.props;
+const t = useTranslations(locale);
+
+const action = listAction(list, locale);
+const ready = isListConfigured(list, locale);
+const disabled = !ready;
+
+const field =
+  'border-line bg-panel text-body focus:border-accent w-full rounded-md border px-3 py-2 text-sm disabled:opacity-50';
+---
+
+<section class:list={['border-line rounded-md border p-7', compact ? 'bg-canvas' : 'bg-panel']}>
+  {heading && <h2 class="text-xl font-semibold">{heading}</h2>}
+  {body && <p class="text-body mt-3 leading-relaxed">{body}</p>}
+
+  {
+    !ready && (
+      <p class="border-line bg-panel-raised text-muted mt-5 rounded-md border border-dashed p-4 text-sm">
+        {t('email.notConfigured')}
+      </p>
+    )
+  }
+
+  <form class="mt-6 space-y-5" method="post" action={ready ? action : undefined}>
+    {/* Hidden from people, filled in by bots. Discarded by the provider. */}
+    <div class="hidden" aria-hidden="true">
+      <label for={`hp-${list}`}>Company website</label>
+      <input
+        id={`hp-${list}`}
+        type="text"
+        name={HONEYPOT_FIELD}
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
+    {/* Tells the provider which language sequence to start, even if two lists
+        ever get merged into one. */}
+    <input type="hidden" name="lang" value={locale} />
+
+    {
+      !compact && (
+        <div>
+          <label class="text-heading block text-sm font-medium" for={`name-${list}`}>
+            {t('email.nameLabel')}
+          </label>
+          <input
+            id={`name-${list}`}
+            name="name"
+            type="text"
+            disabled={disabled}
+            autocomplete="given-name"
+            class={`mt-2 ${field}`}
+          />
+          <p class="text-muted mt-1 text-xs">{t('email.nameHelp')}</p>
+        </div>
+      )
+    }
+
+    <div>
+      <label class="text-heading block text-sm font-medium" for={`email-${list}`}>
+        {t('email.emailLabel')}
+      </label>
+      <input
+        id={`email-${list}`}
+        name="email"
+        type="email"
+        required
+        disabled={disabled}
+        autocomplete="email"
+        class={`mt-2 ${field}`}
+      />
+    </div>
+
+    {/* GDPR: consent must be an active choice, so this is never pre-checked
+        and the form cannot be submitted without it. */}
+    <div>
+      <label class="text-body flex items-start gap-3 text-sm">
+        <input
+          type="checkbox"
+          name="consent"
+          value="yes"
+          required
+          disabled={disabled}
+          class="accent-action mt-1"
+        />
+        <span>{consent ?? t('email.consent')}</span>
+      </label>
+      <p class="text-muted mt-1 ml-7 text-xs">{t('email.consentHelp')}</p>
+    </div>
+
+    <button type="submit" disabled={disabled} class="btn-primary disabled:opacity-50">
+      {submitLabel ?? t('email.submit')}
+    </button>
+  </form>
+
+  <div class="border-line text-muted mt-6 space-y-2 border-t pt-5 text-xs">
+    <p>{t('email.doubleOptIn')}</p>
+    <p>
+      {t('email.noSpam')}{' '}
+      {t('email.privacyNote')}{' '}
+      <a href={route('privacy', locale)} class="link-quiet underline">
+        {t('legal.privacy')}
+      </a>.
+    </p>
+  </div>
+</section>

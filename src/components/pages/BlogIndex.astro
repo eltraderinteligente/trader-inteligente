@@ -1,0 +1,53 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../config/site';
+import { useTranslations, alternatesForRoute, formatDate, isoDate } from '../../i18n/utils';
+import { dynamicRoute } from '../../i18n/routes';
+import { getPosts, slugOf } from '../../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const posts = await getPosts(locale);
+---
+
+<PageLayout
+  title={t('blog.title')}
+  intro={t('blog.intro')}
+  alternates={alternatesForRoute('blog')}
+>
+  {
+    posts.length === 0 ? (
+      <p class="text-muted">{t('blog.empty')}</p>
+    ) : (
+      <ul class="divide-line divide-y">
+        {posts.map((post) => (
+          <li class="py-8 first:pt-0">
+            <article>
+              <time
+                datetime={isoDate(post.data.pubDate)}
+                class="text-muted text-sm"
+              >
+                {formatDate(post.data.pubDate, locale)}
+              </time>
+              <h2 class="mt-2 text-2xl font-semibold">
+                <a
+                  href={dynamicRoute('blogPost', locale, slugOf(post))}
+                  class="hover:decoration-accent underline-offset-4 hover:underline"
+                >
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="text-body mt-3 leading-relaxed">
+                {post.data.description}
+              </p>
+            </article>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</PageLayout>

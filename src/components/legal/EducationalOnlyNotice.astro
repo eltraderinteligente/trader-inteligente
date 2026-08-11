@@ -1,0 +1,18 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../../i18n/utils';
+
+// Required on every course page and every page that sells something.
+// [[LEGAL — draft wording. A lawyer must review this before launch.]]
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<aside
+  aria-labelledby="educational-only-heading"
+  class="border-line bg-panel mt-10 rounded-md border p-5 text-sm leading-relaxed"
+>
+  <h2 id="educational-only-heading" class="text-heading font-sans text-sm font-semibold">
+    {t('disclaimers.educationalHeading')}
+  </h2>
+  <p class="text-muted mt-2">{t('disclaimers.educationalOnly')}</p>
+</aside>

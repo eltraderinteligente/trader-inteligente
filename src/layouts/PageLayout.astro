@@ -1,0 +1,27 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { Locale } from '../config/site';
+
+interface Props {
+  title: string;
+  intro?: string;
+  description?: string;
+  alternates: Record<Locale, string>;
+  noindex?: boolean;
+}
+
+const { title, intro, description, alternates, noindex } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description ?? intro}
+  alternates={alternates}
+  noindex={noindex}
+>
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:py-24">
+    <h1 class="text-3xl font-semibold sm:text-4xl">{title}</h1>
+    {intro && <p class="text-body mt-5 text-lg leading-relaxed">{intro}</p>}
+    <div class="mt-12"><slot /></div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../config/site';
+import { useTranslations, alternatesForRoute, formatDate, isoDate } from '../../i18n/utils';
+import type { RouteKey } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+  translationKey: string;
+}
+
+const { locale, routeKey, translationKey } = Astro.props;
+const t = useTranslations(locale);
+
+const entries = await getCollection(
+  'legal',
+  ({ data }) => data.lang === locale && data.translationKey === translationKey,
+);
+const entry = entries[0];
+
+if (!entry) {
+  throw new Error(
+    `No legal page "${translationKey}" for "${locale}". Expected a file in src/content/legal/${locale}/.`,
+  );
+}
+
+const { Content } = await render(entry);
+---
+
+<PageLayout title={entry.data.title} alternates={alternatesForRoute(routeKey)}>
+  {
+    !entry.data.reviewedByLawyer && (
+      <aside class="border-accent bg-panel mb-12 rounded-md border border-l-4 p-5 text-sm leading-relaxed">
+        <h2 class="text-heading font-sans text-sm font-semibold">
+          {t('disclaimers.notReviewedHeading')}
+        </h2>
+        <p class="text-muted mt-2">{t('disclaimers.notReviewed')}</p>
+      </aside>
+    )
+  }
+
+  <p class="text-muted text-xs">
+    {t('disclaimers.lastUpdated')}:{' '}
+    <time datetime={isoDate(entry.data.updatedDate)}>
+      {formatDate(entry.data.updatedDate, locale)}
+    </time>
+  </p>
+
+  <div class="prose-basic mt-8">
+    <Content />
+  </div>
+</PageLayout>

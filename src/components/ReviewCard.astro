@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import { render, type CollectionEntry } from 'astro:content';
+import StarRating from './StarRating.astro';
+import type { Locale } from '../config/site';
+import { useTranslations, formatDate, isoDate } from '../i18n/utils';
+
+interface Props {
+  review: CollectionEntry<'reviews'>;
+  locale: Locale;
+  courseTitle: string;
+}
+
+const { review, locale, courseTitle } = Astro.props;
+const t = useTranslations(locale);
+const { Content } = await render(review);
+---
+
+{/* data-course lets the filter hide this card without a page reload. */}
+<article class="card" data-course={review.data.course}>
+  <div class="flex items-start gap-4">
+    {
+      review.data.photo && (
+        <Image
+          src={review.data.photo}
+          alt=""
+          width={48}
+          height={48}
+          class="h-12 w-12 shrink-0 rounded-full object-cover"
+        />
+      )
+    }
+    <div class="min-w-0">
+      <p class="text-heading font-semibold">{review.data.name}</p>
+      <p class="text-muted mt-1 text-sm">
+        {courseTitle}
+        <span class="text-line-strong mx-2">·</span>
+        <time datetime={isoDate(review.data.date)}>
+          {formatDate(review.data.date, locale)}
+        </time>
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <StarRating rating={review.data.rating} locale={locale} />
+  </div>
+
+  <div class="prose-basic mt-4">
+    <Content />
+  </div>
+
+  {
+    review.data.compensated && (
+      <p class="border-line text-muted mt-5 border-t pt-4 text-xs">
+        {t('reviews.compensatedNotice')}
+        {review.data.compensationDetail && ` ${review.data.compensationDetail}`}
+      </p>
+    )
+  }
+</article>

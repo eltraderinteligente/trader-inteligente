@@ -1,0 +1,13 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../../i18n/utils';
+
+// Required by the FTC wherever a testimonial or a result appears. Phase 8 adds
+// the remaining compliance components and audits their placement.
+// [[LEGAL — this wording is a draft and must be reviewed by a lawyer before launch]]
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<aside class="border-line bg-panel text-muted rounded-md border p-5 text-sm leading-relaxed">
+  {t('reviews.disclaimer')}
+</aside>

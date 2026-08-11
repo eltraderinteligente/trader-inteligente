@@ -1,0 +1,71 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../config/site';
+import {
+  useTranslations,
+  alternatesForRoute,
+  type TranslationKey,
+} from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+/**
+ * The bio in order of what a reader actually wants to know: who is this, how
+ * did he get here, why should I believe the method, what will the classes be
+ * like, and what is he refusing to do. The last section exists because the
+ * licences are the most credible fact on the site and the easiest to misread
+ * as a financial qualification.
+ */
+const SECTIONS = [
+  'story',
+  'markets',
+  'method',
+  'teaching',
+  'not',
+  'licence',
+] as const;
+---
+
+<PageLayout
+  title={t('about.title')}
+  intro={t('about.intro')}
+  alternates={alternatesForRoute('about')}
+>
+  {/*
+    Deliberately a marked gap rather than a stock photo or an illustrated
+    avatar. A stranger's face here would be worse than no face at all, and a
+    placeholder that looks finished is a placeholder that ships.
+  */}
+  <div
+    class="border-line bg-panel-raised text-muted flex min-h-40 items-center justify-center rounded-md border border-dashed p-6 text-center text-sm"
+  >
+    {t('about.photoPending')}
+  </div>
+
+  {
+    SECTIONS.map((key) => (
+      <section class="mt-14">
+        <h2 class="text-xl font-semibold sm:text-2xl">
+          {t(`about.${key}Heading` as TranslationKey)}
+        </h2>
+        <p class="text-body mt-4 leading-relaxed">
+          {t(`about.${key}` as TranslationKey)}
+        </p>
+      </section>
+    ))
+  }
+
+  <section class="border-line mt-16 border-t pt-14">
+    <h2 class="text-xl font-semibold sm:text-2xl">{t('about.ctaHeading')}</h2>
+    <p class="text-body mt-4 leading-relaxed">{t('about.cta')}</p>
+    <a href={route('contact', locale)} class="btn-primary mt-8">
+      {t('about.ctaButton')}
+    </a>
+  </section>
+</PageLayout>

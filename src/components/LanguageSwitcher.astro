@@ -1,0 +1,38 @@
+---
+import { LOCALES, type Locale } from '../config/site';
+import { getLocaleFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  /** This page's URL in every language, passed down from BaseLayout. */
+  alternates: Record<Locale, string>;
+}
+
+const { alternates } = Astro.props;
+const current = getLocaleFromUrl(Astro.url);
+const t = useTranslations(current);
+---
+
+<nav aria-label={t('language.label')} class="flex items-center gap-1 text-sm">
+  {
+    LOCALES.map((locale, i) => (
+      <>
+        {i > 0 && <span aria-hidden="true" class="text-line-strong">/</span>}
+        {locale === current ? (
+          <span aria-current="true" class="text-heading font-semibold">
+            {locale.toUpperCase()}
+          </span>
+        ) : (
+          <a
+            href={alternates[locale]}
+            hreflang={locale}
+            lang={locale}
+            rel="alternate"
+            class="text-muted hover:text-heading hover:decoration-accent underline-offset-4 transition-colors hover:underline"
+          >
+            {locale.toUpperCase()}
+          </a>
+        )}
+      </>
+    ))
+  }
+</nav>

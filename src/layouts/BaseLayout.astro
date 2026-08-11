@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+import { SITE, LOCALE_TAGS, type Locale } from '../config/site';
+import {
+  getLocaleFromUrl,
+  useTranslations,
+  buildAlternates,
+} from '../i18n/utils';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/legal/CookieBanner.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /**
+   * This page's URL in every language. Required so no page can ship without
+   * correct hreflang tags. Use alternatesForRoute('courses') for static pages.
+   */
+  alternates: Record<Locale, string>;
+  noindex?: boolean;
+}
+
+const { title, description, alternates, noindex = false } = Astro.props;
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+const metaDescription = description ?? t('meta.defaultDescription');
+const canonical = new URL(alternates[locale], SITE.url).href;
+const hreflangs = buildAlternates(alternates);
+const fullTitle = title === SITE.name ? title : `${title} — ${SITE.name}`;
+---
+
+<!doctype html>
+<html lang={LOCALE_TAGS[locale]} class="scroll-smooth bg-canvas">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    {
+      hreflangs.map((alt) => (
+        <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+      ))
+    }
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={LOCALE_TAGS[locale].replace('-', '_')} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#040818" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${SITE.name} — Blog`}
+      href={locale === 'es' ? '/rss.xml' : '/en/rss.xml'}
+    />
+  </head>
+
+  <body class="bg-canvas text-body font-sans min-h-screen antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:bg-action focus:absolute focus:z-50 focus:m-3 focus:rounded focus:px-4 focus:py-2 focus:text-white"
+    >
+      {t('common.skipToContent')}
+    </a>
+
+    <Header alternates={alternates} />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer />
+    <CookieBanner />
+  </body>
+</html>

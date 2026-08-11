@@ -1,0 +1,26 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+// Appears in the footer, so it is on every page of the site. Removing it from
+// the footer removes it from everywhere at once — don't.
+// [[LEGAL — draft wording. A lawyer must review this before launch.]]
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<section
+  aria-labelledby="risk-disclaimer-heading"
+  class="border-line text-muted mt-12 border-t pt-8 text-xs leading-relaxed"
+>
+  <h2
+    id="risk-disclaimer-heading"
+    class="text-muted font-sans mb-3 text-xs font-semibold tracking-[0.16em] uppercase"
+  >
+    {t('disclaimers.riskHeading')}
+  </h2>
+  <p>{t('disclaimers.riskShort')}</p>
+  <a href={route('riskDisclosure', locale)} class="link-quiet mt-3 inline-block underline">
+    {t('disclaimers.riskLink')}
+  </a>
+</section>

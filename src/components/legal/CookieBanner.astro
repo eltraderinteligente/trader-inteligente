@@ -1,0 +1,78 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+// Non-essential cookies are declined until someone actively accepts. The two
+// buttons are deliberately the same size and weight: making "decline" harder
+// to find than "accept" is itself a GDPR problem, not a growth tactic.
+//
+// The site sets no measurement cookies today. This banner exists so that the
+// day one is added, the consent gate is already in place and defaulting to no.
+// [[LEGAL — draft wording. A lawyer must review this before launch.]]
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<div
+  id="cookie-banner"
+  role="dialog"
+  aria-modal="false"
+  aria-label={t('cookieBanner.label')}
+  hidden
+  class="border-line bg-panel-raised fixed inset-x-0 bottom-0 z-40 border-t"
+>
+  <div class="mx-auto flex max-w-4xl flex-col gap-4 px-4 py-5 sm:flex-row sm:items-center">
+    <div class="text-body text-sm leading-relaxed">
+      <p>
+        {t('cookieBanner.body')}{' '}
+        <a href={route('cookies', locale)} class="link-quiet underline">
+          {t('legal.cookies')}
+        </a>.
+      </p>
+    </div>
+    <div class="flex shrink-0 gap-3">
+      <button type="button" data-cookie-choice="declined" class="btn-secondary text-sm">
+        {t('cookieBanner.decline')}
+      </button>
+      <button type="button" data-cookie-choice="accepted" class="btn-primary text-sm">
+        {t('cookieBanner.accept')}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'cookie-consent';
+  const banner = document.getElementById('cookie-banner');
+
+  if (banner) {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      // Private browsing can block storage. Showing the banner again is the
+      // safe failure: it never grants consent that was not given.
+    }
+
+    if (stored !== 'accepted' && stored !== 'declined') {
+      banner.hidden = false;
+    }
+
+    for (const button of banner.querySelectorAll('[data-cookie-choice]')) {
+      button.addEventListener('click', () => {
+        const choice = (button as HTMLElement).dataset.cookieChoice!;
+        try {
+          localStorage.setItem(STORAGE_KEY, choice);
+        } catch {
+          // Choice not persisted, but it is still honoured for this page view.
+        }
+        banner.hidden = true;
+        // Anything added later that sets a measurement cookie should listen
+        // for this and check the value before loading.
+        document.dispatchEvent(
+          new CustomEvent('cookie-consent', { detail: choice }),
+        );
+      });
+    }
+  }
+</script>

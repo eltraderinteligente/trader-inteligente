@@ -1,0 +1,82 @@
+---
+import type { Locale } from '../config/site';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+/*
+  TradingView serves the calendar from their own domain, which means their
+  code runs on this page and can set their cookies. The site's consent banner
+  defaults to "declined", so the widget is never loaded automatically.
+
+  Click-to-load rather than reading the consent flag: it is one code path
+  instead of two, nothing contacts TradingView until a visitor asks for it,
+  and the visitor is told what will happen before it happens.
+*/
+const WIDGET_SRC =
+  'https://s3.tradingview.com/external-embedding/embed-widget-events.js';
+
+// TradingView expects its own locale codes rather than the site's.
+const WIDGET_LOCALE = locale === 'es' ? 'es' : 'en';
+
+const widgetConfig = {
+  colorTheme: 'dark',
+  isTransparent: true,
+  locale: WIDGET_LOCALE,
+  width: '100%',
+  height: 600,
+  // Left unfiltered on purpose: filtering to a country would quietly imply
+  // which market a reader ought to be watching.
+  importanceFilter: '0,1',
+};
+---
+
+<section class="border-line bg-panel mt-10 rounded-md border p-7">
+  <h2 class="text-xl font-semibold">{t('tools.loadHeading')}</h2>
+  <p class="text-body mt-3 leading-relaxed">{t('tools.loadBody')}</p>
+
+  <button type="button" id="calendar-load" class="btn-primary mt-6">
+    {t('tools.loadButton')}
+  </button>
+  <p class="text-muted mt-3 text-xs">{t('tools.loadNotice')}</p>
+
+  {/* Filled in only after the button is pressed. */}
+  <div id="calendar-mount" class="mt-6"></div>
+</section>
+
+<script
+  is:inline
+  define:vars={{ src: WIDGET_SRC, config: widgetConfig }}
+>
+  const button = document.getElementById('calendar-load');
+  const mount = document.getElementById('calendar-mount');
+
+  button?.addEventListener(
+    'click',
+    () => {
+      // TradingView's embed script reads its settings from the text content
+      // of its own <script> tag and replaces the container it sits in.
+      const container = document.createElement('div');
+      container.className = 'tradingview-widget-container';
+
+      const target = document.createElement('div');
+      target.className = 'tradingview-widget-container__widget';
+      container.appendChild(target);
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.textContent = JSON.stringify(config);
+      container.appendChild(script);
+
+      mount?.appendChild(container);
+      button.hidden = true;
+    },
+    { once: true },
+  );
+</script>

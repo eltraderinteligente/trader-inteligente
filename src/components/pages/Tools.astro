@@ -1,0 +1,97 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import EconomicCalendar from '../EconomicCalendar.astro';
+import type { Locale } from '../../config/site';
+import {
+  useTranslations,
+  alternatesForRoute,
+  type TranslationKey,
+} from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+/**
+ * The four windows in which almost every large US company reports. Kept in
+ * calendar order rather than fiscal order, because a reader is looking at a
+ * year, not at a company's books.
+ */
+const SEASONS = ['jan', 'apr', 'jul', 'oct'] as const;
+
+/**
+ * TradingView's own earnings page. An outbound link rather than an embed:
+ * TradingView publishes an economic-calendar widget but no earnings widget,
+ * and a hand-typed list of dates is a list that goes wrong silently.
+ */
+const EARNINGS_URL =
+  locale === 'es'
+    ? 'https://es.tradingview.com/markets/stocks-usa/earnings/'
+    : 'https://www.tradingview.com/markets/stocks-usa/earnings/';
+---
+
+<PageLayout
+  title={t('tools.title')}
+  intro={t('tools.intro')}
+  alternates={alternatesForRoute('tools')}
+>
+  <p class="text-body leading-relaxed">{t('tools.why')}</p>
+
+  <EconomicCalendar locale={locale} />
+
+  <section class="mt-14">
+    <h2 class="text-xl font-semibold sm:text-2xl">{t('tools.howHeading')}</h2>
+    <p class="text-body mt-4 leading-relaxed">{t('tools.howBody')}</p>
+  </section>
+
+  <section class="border-line mt-16 border-t pt-14">
+    <h2 class="text-xl font-semibold sm:text-2xl">
+      {t('tools.earningsHeading')}
+    </h2>
+    <p class="text-body mt-4 leading-relaxed">{t('tools.earningsBody')}</p>
+
+    <h3 class="text-heading mt-10 text-base font-medium">
+      {t('tools.earningsSeasonsHeading')}
+    </h3>
+    <ul class="border-line divide-line mt-4 divide-y border-t border-b">
+      {
+        SEASONS.map((key) => (
+          <li class="py-4">
+            <p class="text-heading font-medium">
+              {t(`tools.earningsSeasons.${key}.label` as TranslationKey)}
+            </p>
+            <p class="text-body mt-1 leading-relaxed">
+              {t(`tools.earningsSeasons.${key}.window` as TranslationKey)}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="text-body mt-6 leading-relaxed">{t('tools.earningsWhy')}</p>
+
+    <a
+      class="border-line bg-panel-raised text-heading hover:border-accent mt-8 inline-block rounded-md border px-5 py-3 text-sm font-medium transition-colors"
+      href={EARNINGS_URL}
+      rel="noopener"
+      target="_blank"
+    >
+      {t('tools.earningsLinkButton')}
+    </a>
+
+    <p class="text-muted mt-4 text-sm leading-relaxed">
+      {t('tools.earningsLinkNote')}
+    </p>
+  </section>
+
+  {/*
+    A calendar on a trading site invites the reading "trade the news". Saying
+    plainly that it does not mean that costs one paragraph.
+  */}
+  <p class="border-line text-muted mt-14 border-t pt-6 text-sm leading-relaxed">
+    {t('tools.disclaimer')}
+  </p>
+</PageLayout>

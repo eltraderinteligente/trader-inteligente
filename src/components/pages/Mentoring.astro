@@ -1,0 +1,119 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import EducationalOnlyNotice from '../legal/EducationalOnlyNotice.astro';
+import type { Locale } from '../../config/site';
+import {
+  useTranslations,
+  alternatesForRoute,
+  formatCurrency,
+  type TranslationKey,
+} from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+/**
+ * The only place the price appears. Written as a number and formatted per
+ * locale so a Latin American reader sees "USD 500" rather than "$500", which
+ * across most of the region reads as the local peso.
+ */
+const MONTHLY_PRICE = 500;
+
+const FACTS = [
+  'sessions',
+  'duration',
+  'format',
+  'recordings',
+  'support',
+  'length',
+] as const;
+const PROCESS = ['one', 'two', 'three'] as const;
+---
+
+<PageLayout
+  title={t('mentoring.title')}
+  intro={t('mentoring.intro')}
+  alternates={alternatesForRoute('mentoring')}
+>
+  {/* What you actually get, stated as plain facts rather than as benefits. */}
+  <section>
+    <h2 class="text-xl font-semibold sm:text-2xl">
+      {t('mentoring.format.heading')}
+    </h2>
+    <dl class="border-line mt-6 divide-y border-t border-b">
+      {
+        FACTS.map((fact) => (
+          <div class="grid gap-1 py-4 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-muted text-sm">
+              {t(`mentoring.format.${fact}.label` as TranslationKey)}
+            </dt>
+            <dd class="text-body sm:col-span-2">
+              {t(`mentoring.format.${fact}.value` as TranslationKey)}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section class="mt-14">
+    <h2 class="text-xl font-semibold sm:text-2xl">
+      {t('mentoring.price.heading')}
+    </h2>
+    <p class="text-heading mt-5 text-3xl font-semibold">
+      {formatCurrency(MONTHLY_PRICE, locale)}
+      <span class="text-muted text-base font-normal">
+        {t('mentoring.price.per')}
+      </span>
+    </p>
+    <p class="text-body mt-4 leading-relaxed">{t('mentoring.price.note')}</p>
+  </section>
+
+  {/*
+    Capacity is a fact of small-group teaching. Repeated from the homepage
+    because this is the page where someone decides, and it is the honest
+    reason a place may not be free.
+  */}
+  <section class="mt-14">
+    <h2 class="text-xl font-semibold sm:text-2xl">
+      {t('mentoring.capacity.heading')}
+    </h2>
+    <p class="text-body mt-4 leading-relaxed">{t('mentoring.capacity.body')}</p>
+  </section>
+
+  <section class="mt-14">
+    <h2 class="text-xl font-semibold sm:text-2xl">
+      {t('mentoring.process.heading')}
+    </h2>
+    <ol class="mt-6 space-y-5">
+      {
+        PROCESS.map((step, index) => (
+          <li class="flex gap-4">
+            <span
+              class="border-line text-muted flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-sm"
+              aria-hidden="true"
+            >
+              {index + 1}
+            </span>
+            <p class="text-body leading-relaxed">
+              {t(`mentoring.process.steps.${step}` as TranslationKey)}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <div class="mt-14">
+    <EducationalOnlyNotice />
+  </div>
+
+  <a href={route('contact', locale)} class="btn-primary mt-10">
+    {t('mentoring.cta')}
+  </a>
+</PageLayout>
