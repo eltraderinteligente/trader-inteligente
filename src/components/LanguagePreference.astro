@@ -1,0 +1,73 @@
+---
+import type { Locale } from '../config/site';
+import { getLocaleFromUrl } from '../i18n/utils';
+import { LANG_PREFERENCE_KEY } from '../config/language';
+
+interface Props {
+  /** This page's URL in every language, passed down from BaseLayout. */
+  alternates: Record<Locale, string>;
+}
+
+const { alternates } = Astro.props;
+const current = getLocaleFromUrl(Astro.url);
+---
+
+{/*
+  Sends a visitor to the version of the site their browser asks for.
+
+  Deliberately limited to the two homepages. Redirecting on every page would
+  mean Google's crawler, which reports itself as English, gets bounced out of
+  the Spanish pages it is supposed to be reading — and Spanish is the primary
+  audience. Search visitors do not need this anyway: the hreflang tags already
+  tell Google which version to show them. What this fixes is someone typing
+  the domain, following a bookmark, or clicking a link that was sent to them.
+
+  A choice made by clicking ES or EN is stored by LanguageSwitcher and always
+  wins here, so the site never overrules somebody who has already told it what
+  they want.
+
+  Inline and in <head> on purpose: it has to run before anything is painted,
+  otherwise the visitor sees a flash of the wrong language.
+*/}
+<script is:inline define:vars={{ current, alternates, key: LANG_PREFERENCE_KEY }}>
+  (function () {
+    var target = null;
+
+    try {
+      var stored = localStorage.getItem(key);
+      if (stored && alternates[stored]) target = stored;
+    } catch (e) {
+      // Private browsing can make localStorage throw rather than return null.
+    }
+
+    if (!target) {
+      var asked = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < asked.length; i++) {
+        // 'en-GB' and 'es-419' both matter here; only the first part does.
+        var code = String(asked[i] || '')
+          .slice(0, 2)
+          .toLowerCase();
+        if (alternates[code]) {
+          target = code;
+          break;
+        }
+      }
+    }
+
+    if (!target || target === current) return;
+
+    var destination = alternates[target];
+    if (!destination) return;
+
+    // Compared without a trailing slash so '/en' and '/en/' are not treated
+    // as different places, which would redirect forever.
+    var trim = function (path) {
+      return path.length > 1 ? path.replace(/\/+$/, '') : path;
+    };
+    if (trim(destination) === trim(window.location.pathname)) return;
+
+    // replace() rather than assign() so the back button returns to wherever
+    // they came from, not to a page that immediately redirects them again.
+    window.location.replace(destination + window.location.search + window.location.hash);
+  })();
+</script>

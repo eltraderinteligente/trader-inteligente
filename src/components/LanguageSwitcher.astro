@@ -27,6 +27,7 @@ const t = useTranslations(current);
             hreflang={locale}
             lang={locale}
             rel="alternate"
+            data-lang-choice={locale}
             class="text-muted hover:text-heading hover:decoration-accent underline-offset-4 transition-colors hover:underline"
           >
             {locale.toUpperCase()}
@@ -36,3 +37,27 @@ const t = useTranslations(current);
     ))
   }
 </nav>
+
+{/*
+  Clicking ES or EN is somebody telling the site what they want, so it is
+  remembered and the homepage stops guessing from then on. Without this, a
+  Spanish speaker on an English laptop would be sent back to English on every
+  single visit, no matter how many times they switched.
+*/}
+<script>
+  import { LANG_PREFERENCE_KEY } from '../config/language';
+
+  for (const link of document.querySelectorAll<HTMLElement>(
+    '[data-lang-choice]'
+  )) {
+    link.addEventListener('click', () => {
+      const choice = link.dataset.langChoice;
+      if (!choice) return;
+      try {
+        localStorage.setItem(LANG_PREFERENCE_KEY, choice);
+      } catch {
+        // Nothing to do if storage is blocked; detection simply continues.
+      }
+    });
+  }
+</script>
