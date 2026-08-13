@@ -330,13 +330,13 @@
     }
   },
   "thankYou": {
-    "title": "Thank you",
-    "intro": "[[POST-PURCHASE MESSAGE — needs real copy, including next steps and how to access the course]]",
+    "title": "Application received",
+    "intro": "Thank you. Your application has arrived, and Javier reads it himself — not an automated system.",
     "cta": "Back to homepage",
     "stepsHeading": "What happens next",
-    "steps": "[[POST-PURCHASE STEPS — needs real copy: when the email arrives, which address it comes from, how to log in to the platform, and who to contact if something goes wrong]]",
+    "steps": "Javier reads what you wrote and replies by email from the contact address on this site. If it looks like a fit, that reply suggests a short call to talk about where you are and what times work for the group. There is nothing to pay until after that conversation, and the price and billing terms are the ones shown on the mentorship page.",
     "supportHeading": "Nothing arrived?",
-    "support": "[[SUPPORT — needs the real contact email and response time]]"
+    "support": "Check your spam folder first — that is where most of these replies end up. If it still is not there, write again from the contact page; the address you left may have had a typo."
   },
   "notFound": {
     "title": "Page not found",

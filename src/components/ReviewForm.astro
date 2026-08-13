@@ -1,7 +1,12 @@
 ---
 import type { Locale } from '../config/site';
 import { useTranslations } from '../i18n/utils';
-import { FORMS, HONEYPOT_FIELD, isConfigured } from '../config/forms';
+import {
+  FORMS,
+  FORM_SUCCESS,
+  HONEYPOT_FIELD,
+  isConfigured,
+} from '../config/forms';
 
 interface Props {
   locale: Locale;
@@ -10,8 +15,12 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const action = FORMS.reviewAction;
-const ready = isConfigured(action);
+const netlify = FORMS.provider === 'netlify';
+const ready = isConfigured(FORMS.reviewAction);
+
+// With Netlify the destination is not a collector but the page the writer
+// lands on afterwards; Netlify itself receives the submission.
+const action = netlify ? FORM_SUCCESS[locale] : FORMS.reviewAction;
 
 // A form with no destination would look like it worked and silently drop the
 // submission, so every control is disabled until an endpoint is set.
@@ -43,8 +52,20 @@ const helpClass = 'text-muted mt-1 text-xs';
     class="mt-8 space-y-6"
     method="post"
     action={ready ? action : undefined}
+    name={netlify ? FORMS.reviewFormName : undefined}
+    data-netlify={netlify ? 'true' : undefined}
+    data-netlify-honeypot={netlify ? HONEYPOT_FIELD : undefined}
     aria-describedby={ready ? undefined : 'review-form-unavailable'}
   >
+    {/*
+      Netlify matches a submission to its inbox by this value. The attribute
+      on the form above is enough at build time; this hidden field is what
+      travels with the submission itself.
+    */}
+    {netlify && (
+      <input type="hidden" name="form-name" value={FORMS.reviewFormName} />
+    )}
+
     {/* Hidden from people, filled in by bots. Discarded by the form service. */}
     <div class="hidden" aria-hidden="true">
       <label for="hp">Company website</label>

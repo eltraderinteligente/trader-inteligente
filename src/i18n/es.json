@@ -330,13 +330,13 @@
     }
   },
   "thankYou": {
-    "title": "Gracias",
-    "intro": "[[MENSAJE POST-COMPRA — necesita texto real, incluidos los siguientes pasos y cómo acceder al curso]]",
+    "title": "Solicitud recibida",
+    "intro": "Gracias. Tu solicitud ha llegado y la lee Javier, no un sistema automático.",
     "cta": "Volver al inicio",
     "stepsHeading": "Qué pasa ahora",
-    "steps": "[[PASOS DESPUÉS DE LA COMPRA — necesita texto real: cuándo llega el correo, desde qué dirección, cómo entrar a la plataforma y a quién escribir si algo falla]]",
-    "supportHeading": "¿No te ha llegado nada?",
-    "support": "[[SOPORTE — necesita el correo real de contacto y el plazo de respuesta]]"
+    "steps": "Javier lee lo que has escrito y te responde por correo desde la dirección de contacto de esta web. Si encaja, la respuesta propone una llamada corta para hablar de tu situación y de los horarios del grupo. No hay nada que pagar hasta después de esa conversación, y el precio y la forma de cobro son los que aparecen en la página de la mentoría.",
+    "supportHeading": "¿No has recibido respuesta?",
+    "support": "Revisa la carpeta de spam antes que nada: es donde acaban la mayoría de estas respuestas. Si sigue sin aparecer, vuelve a escribir desde la página de contacto; puede que el correo que dejaste tuviera una errata."
   },
   "notFound": {
     "title": "Página no encontrada",
