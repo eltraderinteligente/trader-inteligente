@@ -106,7 +106,7 @@
           "body": "Multi-timeframe analysis, supply and demand, ranges and entries. Everything above comes together, moving from understanding the chart to knowing where and why to act."
         }
       },
-      "capacity": "I never teach a session with more than four students. It is the number that lets me get to everyone within the same hour, which is why a place is not always available.",
+      "capacity": "I never teach a session with more than four students. It is the number that lets me get to everyone within the same hour, which is why the groups are formed one at a time.",
       "cta": "See the mentorship"
     }
   },
@@ -162,14 +162,14 @@
     },
     "capacity": {
       "heading": "Four students maximum",
-      "body": "I never teach a session with more than four students. It is the number that lets me get to everyone within the same hour, so nobody is left holding a question. That is why a place is not always available."
+      "body": "I never teach a session with more than four students. It is the number that lets me get to everyone within the same hour, so nobody is left holding a question. That is why groups are formed one at a time, and when yours starts depends on when it fills."
     },
     "process": {
       "heading": "How to start",
       "steps": {
         "one": "You write to me through the contact form and tell me where you are starting from.",
         "two": "We talk with no obligation, to see whether this fits you and whether there is a place.",
-        "three": "If we both think it fits, we settle the schedule and I send you a payment link in your name. You start with the next intake."
+        "three": "If we both think it fits, we settle the schedule and I send you a payment link in your name. You start with the next group."
       }
     },
     "cta": "Apply for a place"
@@ -289,10 +289,10 @@
   },
   "contact": {
     "title": "Contact",
-    "intro": "There are four places and I choose who I work with, so we talk before you join. I want to know where you are coming from, and you want to know whether this is any use to you.",
+    "intro": "Groups are four people and I choose who I work with, so we talk before you join. I want to know where you are coming from, and you want to know whether this is any use to you.",
     "apply": {
       "heading": "Apply for a place",
-      "intro": "Fill this in and I will write back to arrange a short call. Nothing is paid at this step and you are not committing to anything. If there is no place right now I will tell you, and let you know when the next one opens.",
+      "intro": "Fill this in and I will write back to arrange a short call. Nothing is paid at this step and you are not committing to anything. If there is no group forming right now I will tell you, and let you know as soon as the next one starts.",
       "notConfigured": "[[FORM — destination not connected yet. See src/config/forms.ts]]",
       "form": {
         "name": "Name",
@@ -481,7 +481,7 @@
       },
       "places": {
         "q": "Is there a place available right now?",
-        "a": "It depends on the moment. I never teach a session with more than four students, so sometimes you have to wait for the next intake. Write to me and I will tell you how it stands; if there is no room, I will say so plainly."
+        "a": "It depends on the moment. Because each group is four people, sometimes one is forming and you can join straight away, and sometimes you wait for the next one to start. Write to me and I will tell you how it stands that day, without dressing it up."
       },
       "signals": {
         "q": "Do you give signals or copy trading?",

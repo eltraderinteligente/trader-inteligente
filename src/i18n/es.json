@@ -106,7 +106,7 @@
           "body": "Multitemporalidad, oferta y demanda, rangos y entradas. Se junta todo lo anterior para pasar de entender el gráfico a saber dónde y por qué actuar."
         }
       },
-      "capacity": "Nunca doy una sesión con más de cuatro alumnos. Es el número que me permite atender a todos en la misma hora, y por eso no siempre hay plaza disponible.",
+      "capacity": "Nunca doy una sesión con más de cuatro alumnos. Es el número que me permite atender a todos en la misma hora, y por eso los grupos se forman de uno en uno.",
       "cta": "Ver la mentoría"
     }
   },
@@ -162,14 +162,14 @@
     },
     "capacity": {
       "heading": "Máximo cuatro alumnos",
-      "body": "Nunca doy una sesión con más de cuatro alumnos. Es el número que me permite atender a todos en la misma hora, sin que nadie se quede con la pregunta sin hacer. Por eso no siempre hay plaza disponible."
+      "body": "Nunca doy una sesión con más de cuatro alumnos. Es el número que me permite atender a todos en la misma hora, sin que nadie se quede con la pregunta sin hacer. Por eso los grupos se van formando de uno en uno, y cuándo empieza el tuyo depende de cuándo se complete."
     },
     "process": {
       "heading": "Cómo empezar",
       "steps": {
         "one": "Me escribes por el formulario de contacto y me cuentas de dónde partes.",
         "two": "Hablamos sin compromiso para ver si esto encaja contigo y si hay plaza.",
-        "three": "Si los dos lo vemos claro, fijamos los horarios y te mando un enlace de pago a tu nombre. Empiezas en la siguiente tanda."
+        "three": "Si los dos lo vemos claro, fijamos los horarios y te mando un enlace de pago a tu nombre. Empiezas con el siguiente grupo."
       }
     },
     "cta": "Solicitar una plaza"
@@ -289,10 +289,10 @@
   },
   "contact": {
     "title": "Contacto",
-    "intro": "Hay cuatro plazas y elijo con quién trabajo, así que antes de que entres hablamos. Yo quiero saber de dónde vienes y tú quieres saber si esto te sirve.",
+    "intro": "Los grupos son de cuatro personas y elijo con quién trabajo, así que antes de que entres hablamos. Yo quiero saber de dónde vienes y tú quieres saber si esto te sirve.",
     "apply": {
       "heading": "Solicitar una plaza",
-      "intro": "Rellena esto y te escribo para coordinar una llamada corta. En este paso no se paga nada y no te comprometes a nada. Si no hay plaza en este momento te lo digo, y te aviso cuando se abra la siguiente.",
+      "intro": "Rellena esto y te escribo para coordinar una llamada corta. En este paso no se paga nada y no te comprometes a nada. Si en este momento no hay ningún grupo formándose te lo digo, y te aviso en cuanto empiece el siguiente.",
       "notConfigured": "[[FORMULARIO — falta conectar el destino. Ver src/config/forms.ts]]",
       "form": {
         "name": "Nombre",
@@ -481,7 +481,7 @@
       },
       "places": {
         "q": "¿Hay plaza disponible ahora mismo?",
-        "a": "Depende del momento. Nunca doy una sesión con más de cuatro alumnos, así que a veces hay que esperar a la siguiente tanda. Escríbeme y te digo cómo está la cosa; si no hay sitio, te lo digo claro."
+        "a": "Depende del momento. Como cada grupo es de cuatro personas, a veces hay uno formándose y puedes entrar enseguida, y a veces toca esperar a que arranque el siguiente. Escríbeme y te digo cómo está la cosa ese día, sin adornos."
       },
       "signals": {
         "q": "¿Das señales o copy trading?",
