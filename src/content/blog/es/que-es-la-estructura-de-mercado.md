@@ -6,7 +6,7 @@ lang: es
 translationKey: estructura-de-mercado
 author: 'Javier Andrade'
 tags: ['estructura de mercado', 'básicos']
-draft: true
+draft: false
 ---
 
 Un gráfico al que no le haces ninguna pregunta concreta no te responde nada.
@@ -75,8 +75,11 @@ gente que solo aprendió a operar tendencias.
 Fíjate en algo importante: son descripciones de lo que **ya pasó**. Ninguna de
 las tres dice qué va a hacer el precio después.
 
-> [[IMAGEN — falta la captura: un gráfico con los máximos y mínimos marcados
-> a mano, mostrando los tres casos.]]
+<!-- [[IMAGEN — falta la captura: un gráfico con los máximos y mínimos marcados
+a mano, mostrando los tres casos.]] Oculta para que el lector no vea un hueco;
+la nota sigue aquí para cuando llegue la captura. -->
+
+
 
 ## Lo que la estructura no hace
 

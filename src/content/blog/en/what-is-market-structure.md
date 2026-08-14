@@ -6,7 +6,7 @@ lang: en
 translationKey: estructura-de-mercado
 author: 'Javier Andrade'
 tags: ['market structure', 'basics']
-draft: true
+draft: false
 ---
 
 A chart you are not asking a specific question of will not answer you. It is a
@@ -74,8 +74,9 @@ people who only learned to trade trends.
 Notice something important: these are descriptions of what has **already
 happened**. None of the three tells you what price will do next.
 
-> [[IMAGE — screenshot missing: a chart with highs and lows marked by hand,
-> showing all three cases.]]
+<!-- [[IMAGE — screenshot missing: a chart with highs and lows marked by hand,
+showing all three cases.]] Hidden so the reader sees no gap; the note stays
+here for when the screenshot arrives. -->
 
 ## What structure does not do
 
