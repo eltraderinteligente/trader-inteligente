@@ -64,7 +64,8 @@ publicadas y los mensajes de contacto]]
 ## Tus derechos
 
 Puedes solicitar acceso, rectificación, supresión, limitación, portabilidad y
-oposición escribiendo a [[CORREO DE CONTACTO]].
+oposición escribiéndonos desde el formulario de la
+[página de contacto](/contacto).
 
 [[DERECHOS — el listado y los plazos cambian según la normativa aplicable
 (RGPD, CCPA y equivalentes en Latinoamérica). El abogado debe ajustarlo.]]

@@ -36,8 +36,8 @@ depósitos y no ejecutamos operaciones en nombre de nadie. En ningún momento
 tenemos acceso a tu cuenta de trading ni a tu dinero.
 
 Si alguien te contacta diciendo representarnos y te pide que le transfieras
-fondos o le des acceso a tu cuenta, no es nuestro. Escríbenos a
-[[CORREO DE CONTACTO]].
+fondos o le des acceso a tu cuenta, no es nuestro. Avísanos desde la
+[página de contacto](/contacto).
 
 ## Riesgo de pérdida
 

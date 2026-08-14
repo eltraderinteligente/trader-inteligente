@@ -57,4 +57,5 @@ cookie exists]]
 
 ## Contact
 
-If you have questions about this policy, write to [[CONTACT EMAIL]].
+If you have questions about this policy, write to us using the form on the
+[contact page](/en/contact).

@@ -59,4 +59,5 @@ cookies no esenciales]]
 
 ## Contacto
 
-Si tienes dudas sobre esta política, escribe a [[CORREO DE CONTACTO]].
+Si tienes dudas sobre esta política, escríbenos desde el formulario de la
+[página de contacto](/contacto).

@@ -36,7 +36,8 @@ deposits, and do not place trades on anyone's behalf. At no point do we have
 access to your trading account or your money.
 
 If anyone contacts you claiming to represent us and asks you to transfer funds
-or grant account access, they are not us. Please write to [[CONTACT EMAIL]].
+or grant account access, they are not us. Please tell us using the
+[contact page](/en/contact).
 
 ## Risk of loss
 

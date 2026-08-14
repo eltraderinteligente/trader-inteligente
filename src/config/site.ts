@@ -6,8 +6,16 @@ export const SITE = {
   name: 'El Trader Inteligente',
   // [[BUSINESS ENTITY — needs real legal entity name and jurisdiction]]
   legalEntity: '[[LEGAL ENTITY]]',
-  email: '[[CONTACT EMAIL]]',
 } as const;
+
+/**
+ * There is deliberately no contact address here.
+ *
+ * An address printed on a public page is harvested by spam bots within days,
+ * and the only cure is to abandon the address. Every route into the inbox on
+ * this site is a form instead: the submission arrives by email, so the reply
+ * still comes from a real person, but there is nothing on the page to scrape.
+ */
 
 export const LOCALES = ['es', 'en'] as const;
 export type Locale = (typeof LOCALES)[number];

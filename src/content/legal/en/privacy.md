@@ -62,7 +62,8 @@ contact messages]]
 ## Your rights
 
 You can request access, correction, deletion, restriction, portability and
-objection by writing to [[CONTACT EMAIL]].
+objection by writing to us using the form on the
+[contact page](/en/contact).
 
 [[RIGHTS — the list and the deadlines change depending on the applicable law
 (GDPR, CCPA and Latin American equivalents). The lawyer must adjust this.]]

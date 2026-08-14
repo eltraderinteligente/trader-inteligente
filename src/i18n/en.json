@@ -325,8 +325,19 @@
     },
     "other": {
       "heading": "Just want to ask something?",
-      "body": "If your question is not about joining the mentorship, email me directly at the address below. Before you do, have a look at the FAQ — a good part of it is answered there already.",
-      "faqLink": "See the FAQ"
+      "body": "If your question is not about joining the mentorship, write it here and I will answer you myself. Before you do, have a look at the FAQ — a good part of it is answered there already.",
+      "faqLink": "See the FAQ",
+      "form": {
+        "name": "Name (optional)",
+        "nameHelp": "So I know what to call you in the reply.",
+        "email": "Email",
+        "emailHelp": "Where I reply. I do not share it with anyone.",
+        "message": "Your question",
+        "messageHelp": "The more specific it is, the better I can answer it.",
+        "consent": "I agree to you emailing me at this address to answer my question.",
+        "consentHelp": "For that only. You are not added to any list and you will not get promotions.",
+        "submit": "Send question"
+      }
     }
   },
   "thankYou": {
@@ -337,6 +348,13 @@
     "steps": "Javier reads what you wrote and replies by email from the contact address on this site. If it looks like a fit, that reply suggests a short call to talk about where you are and what times work for the group. There is nothing to pay until after that conversation, and the price and billing terms are the ones shown on the mentorship page.",
     "supportHeading": "Nothing arrived?",
     "support": "Check your spam folder first — that is where most of these replies end up. If it still is not there, write again from the contact page; the address you left may have had a typo."
+  },
+  "questionSent": {
+    "title": "Question sent",
+    "intro": "I have it. I answer these myself, from my own inbox — not an automated system.",
+    "cta": "Back to homepage",
+    "stepsHeading": "What happens next",
+    "steps": "The reply comes to the address you left. If it does not turn up, check your spam folder before writing again — that is usually where it is. And if your question was about joining the mentorship, the application at the top of the contact page is the faster route."
   },
   "waitlistConfirmed": {
     "title": "You are on the list",

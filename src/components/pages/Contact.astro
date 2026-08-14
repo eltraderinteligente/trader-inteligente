@@ -1,7 +1,8 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import ApplicationForm from '../ApplicationForm.astro';
-import { SITE, type Locale } from '../../config/site';
+import QuestionForm from '../QuestionForm.astro';
+import type { Locale } from '../../config/site';
 import { useTranslations, alternatesForRoute } from '../../i18n/utils';
 import { route } from '../../i18n/routes';
 
@@ -11,10 +12,6 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-
-/** Until a real address is set in src/config/site.ts, show it as a placeholder
- * rather than as a mailto: link that opens an empty email to nobody. */
-const emailReady = !SITE.email.startsWith('[[');
 ---
 
 <PageLayout
@@ -47,19 +44,7 @@ const emailReady = !SITE.email.startsWith('[[');
     </h2>
     <p class="text-body mt-4 leading-relaxed">{t('contact.other.body')}</p>
 
-    <p class="mt-4">
-      {
-        emailReady ? (
-          <a class="link-quiet underline" href={`mailto:${SITE.email}`}>
-            {SITE.email}
-          </a>
-        ) : (
-          <span class="border-line bg-panel-raised text-muted inline-block rounded-md border border-dashed px-3 py-2 text-sm">
-            {SITE.email}
-          </span>
-        )
-      }
-    </p>
+    <QuestionForm locale={locale} />
 
     <a href={route('faq', locale)} class="link-quiet mt-6 inline-block text-sm underline">
       {t('contact.other.faqLink')}

@@ -1,0 +1,39 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../config/site';
+import { useTranslations, alternatesForRoute } from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+{/*
+  Separate from /gracias on purpose. That page tells someone their application
+  is being considered, which is a different and much heavier promise than
+  "your question arrived".
+*/}
+<PageLayout
+  title={t('questionSent.title')}
+  intro={t('questionSent.intro')}
+  alternates={alternatesForRoute('questionSent')}
+  noindex
+>
+  <section>
+    <h2 class="text-2xl font-semibold">{t('questionSent.stepsHeading')}</h2>
+    <p class="text-body mt-4 leading-relaxed">{t('questionSent.steps')}</p>
+    <a href={route('faq', locale)} class="link-quiet mt-6 inline-block text-sm underline">
+      {t('contact.other.faqLink')}
+    </a>
+  </section>
+
+  <p class="mt-14">
+    <a href={route('home', locale)} class="link-quiet text-sm underline">
+      {t('questionSent.cta')}
+    </a>
+  </p>
+</PageLayout>

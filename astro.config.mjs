@@ -15,6 +15,8 @@ const NOINDEX_PATHS = [
   '/en/thank-you/',
   '/en-la-lista/',
   '/en/on-the-list/',
+  '/pregunta-enviada/',
+  '/en/question-sent/',
 ];
 
 // https://astro.build/config

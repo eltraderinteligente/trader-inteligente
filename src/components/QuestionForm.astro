@@ -1,0 +1,127 @@
+---
+import type { Locale } from '../config/site';
+import { useTranslations } from '../i18n/utils';
+import { route } from '../i18n/routes';
+import { FORMS, HONEYPOT_FIELD, isConfigured } from '../config/forms';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+/**
+ * A form rather than a published address. An address written on a public page
+ * is harvested by bots within days, and the only way to stop the resulting
+ * spam is to abandon the address. This box reaches the same inbox and shows
+ * nothing to harvest.
+ */
+const netlify = FORMS.provider === 'netlify';
+const ready = netlify || isConfigured(FORMS.contactAction);
+const action = netlify ? route('questionSent', locale) : FORMS.contactAction;
+const disabled = !ready;
+
+const field =
+  'border-line bg-panel text-body focus:border-accent w-full rounded-md border px-3 py-2 text-sm disabled:opacity-50';
+const labelClass = 'text-heading block text-sm font-medium';
+const helpClass = 'text-muted mt-1 text-xs';
+---
+
+<form
+  class="mt-6 space-y-5"
+  method="post"
+  action={ready ? action : undefined}
+  name={netlify ? FORMS.questionFormName : undefined}
+  data-netlify={netlify ? 'true' : undefined}
+  data-netlify-honeypot={HONEYPOT_FIELD}
+>
+  {netlify && (
+    <input type="hidden" name="form-name" value={FORMS.questionFormName} />
+  )}
+
+  {/* Hidden from people, filled in by bots. Discarded rather than delivered. */}
+  <div class="hidden" aria-hidden="true">
+    <label for="question-hp">Company website</label>
+    <input
+      id="question-hp"
+      type="text"
+      name={HONEYPOT_FIELD}
+      tabindex="-1"
+      autocomplete="off"
+    />
+  </div>
+
+  {/* Which language to answer in, without having to guess from the writing. */}
+  <input type="hidden" name="lang" value={locale} />
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={labelClass} for="question-name">
+        {t('contact.other.form.name')}
+      </label>
+      <input
+        id="question-name"
+        name="name"
+        type="text"
+        disabled={disabled}
+        autocomplete="name"
+        class={`mt-2 ${field}`}
+      />
+      <p class={helpClass}>{t('contact.other.form.nameHelp')}</p>
+    </div>
+
+    <div>
+      <label class={labelClass} for="question-email">
+        {t('contact.other.form.email')}
+      </label>
+      <input
+        id="question-email"
+        name="email"
+        type="email"
+        required
+        disabled={disabled}
+        autocomplete="email"
+        class={`mt-2 ${field}`}
+      />
+      <p class={helpClass}>{t('contact.other.form.emailHelp')}</p>
+    </div>
+  </div>
+
+  <div>
+    <label class={labelClass} for="question-message">
+      {t('contact.other.form.message')}
+    </label>
+    <textarea
+      id="question-message"
+      name="message"
+      rows="5"
+      required
+      disabled={disabled}
+      class={`mt-2 ${field}`}></textarea>
+    <p class={helpClass}>{t('contact.other.form.messageHelp')}</p>
+  </div>
+
+  {/*
+    Consent covers replying to this one question and nothing else, so asking a
+    question can never quietly become a mailing-list signup.
+  */}
+  <div>
+    <label class="text-body flex items-start gap-3 text-sm">
+      <input
+        type="checkbox"
+        name="consent"
+        value="yes"
+        required
+        disabled={disabled}
+        class="accent-action mt-1"
+      />
+      <span>{t('contact.other.form.consent')}</span>
+    </label>
+    <p class={`${helpClass} ml-7`}>{t('contact.other.form.consentHelp')}</p>
+  </div>
+
+  <button type="submit" disabled={disabled} class="btn-secondary disabled:opacity-50">
+    {t('contact.other.form.submit')}
+  </button>
+</form>

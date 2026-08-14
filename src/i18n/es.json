@@ -325,8 +325,19 @@
     },
     "other": {
       "heading": "¿Solo quieres preguntar algo?",
-      "body": "Si tu pregunta no es sobre entrar a la mentoría, escríbeme directamente al correo de abajo. Antes, echa un ojo a las preguntas frecuentes: buena parte ya está respondida ahí.",
-      "faqLink": "Ver las preguntas frecuentes"
+      "body": "Si tu pregunta no es sobre entrar a la mentoría, escríbela aquí y te contesto yo. Antes, echa un ojo a las preguntas frecuentes: buena parte ya está respondida ahí.",
+      "faqLink": "Ver las preguntas frecuentes",
+      "form": {
+        "name": "Nombre (opcional)",
+        "nameHelp": "Para saber cómo llamarte al responder.",
+        "email": "Correo electrónico",
+        "emailHelp": "Ahí te contesto. No lo comparto con nadie.",
+        "message": "Tu pregunta",
+        "messageHelp": "Cuanto más concreta, mejor te puedo responder.",
+        "consent": "Acepto que me escribas a este correo para responder a mi pregunta.",
+        "consentHelp": "Solo para eso. No te apunto a ninguna lista ni te mando promociones.",
+        "submit": "Enviar pregunta"
+      }
     }
   },
   "thankYou": {
@@ -337,6 +348,13 @@
     "steps": "Javier lee lo que has escrito y te responde por correo desde la dirección de contacto de esta web. Si encaja, la respuesta propone una llamada corta para hablar de tu situación y de los horarios del grupo. No hay nada que pagar hasta después de esa conversación, y el precio y la forma de cobro son los que aparecen en la página de la mentoría.",
     "supportHeading": "¿No has recibido respuesta?",
     "support": "Revisa la carpeta de spam antes que nada: es donde acaban la mayoría de estas respuestas. Si sigue sin aparecer, vuelve a escribir desde la página de contacto; puede que el correo que dejaste tuviera una errata."
+  },
+  "questionSent": {
+    "title": "Pregunta enviada",
+    "intro": "Ya la tengo. Te contesto yo desde mi correo, no un sistema automático.",
+    "cta": "Volver al inicio",
+    "stepsHeading": "Qué pasa ahora",
+    "steps": "La respuesta te llega al correo que dejaste. Si no aparece, mira en la carpeta de spam antes de volver a escribir: es donde suelen acabar. Y si la pregunta era sobre entrar a la mentoría, la solicitud de la parte de arriba de la página de contacto es el camino más rápido."
   },
   "waitlistConfirmed": {
     "title": "Estás en la lista",
