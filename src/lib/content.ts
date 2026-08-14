@@ -10,12 +10,30 @@ const isPublished = import.meta.env.PROD
   ? (draft: boolean) => !draft
   : () => true; // drafts stay visible while developing
 
+/**
+ * A post needs two things to be public: `draft: false`, and a publication
+ * date that has arrived.
+ *
+ * The date half is a safety net. Marking a post ready is a one-line change
+ * that is easy to make on the wrong file, and without this check that
+ * mistake puts an unread post in front of readers immediately. With it, the
+ * worst case is that the post waits until the day it was always meant for.
+ *
+ * Note this is checked when the site is built, not when it is read. The site
+ * is a set of finished files, so a post whose date passes overnight does not
+ * appear by itself — the site has to be rebuilt for it to show up.
+ */
+const isPostVisible = import.meta.env.PROD
+  ? (draft: boolean, pubDate: Date) => !draft && pubDate.valueOf() <= Date.now()
+  : () => true; // both drafts and future posts stay readable while developing
+
 export async function getPosts(
   locale: Locale,
 ): Promise<CollectionEntry<'blog'>[]> {
   const posts = await getCollection(
     'blog',
-    ({ data }) => data.lang === locale && isPublished(data.draft),
+    ({ data }) =>
+      data.lang === locale && isPostVisible(data.draft, data.pubDate),
   );
   return posts.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),

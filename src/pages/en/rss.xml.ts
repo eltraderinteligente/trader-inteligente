@@ -1,13 +1,12 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
 import type { APIContext } from 'astro';
 import { SITE } from '../../config/site';
+import { getPosts } from '../../lib/content';
 
 export async function GET(context: APIContext) {
-  const posts = await getCollection(
-    'blog',
-    ({ data }) => data.lang === 'en' && !data.draft,
-  );
+  // Through getPosts rather than its own query, so the feed cannot announce a
+  // post the site itself is still holding back.
+  const posts = await getPosts('en');
 
   return rss({
     title: `${SITE.name} — Blog`,
