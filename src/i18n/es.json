@@ -338,6 +338,15 @@
     "supportHeading": "¿No has recibido respuesta?",
     "support": "Revisa la carpeta de spam antes que nada: es donde acaban la mayoría de estas respuestas. Si sigue sin aparecer, vuelve a escribir desde la página de contacto; puede que el correo que dejaste tuviera una errata."
   },
+  "waitlistConfirmed": {
+    "title": "Estás en la lista",
+    "intro": "Tu correo ha quedado apuntado. No hay nada más que hacer por ahora.",
+    "cta": "Volver al inicio",
+    "stepsHeading": "Qué pasa ahora",
+    "steps": "Cuando se abre un grupo nuevo, Javier escribe primero a las personas de esta lista. Es un correo escrito a mano, no un boletín: entre medias no recibirás nada. Si prefieres no esperar, puedes enviar tu solicitud directamente desde la página de contacto.",
+    "supportHeading": "¿Quieres salir de la lista?",
+    "support": "Escríbeme desde la página de contacto y borro tu correo. No hay enlace automático de baja porque esta lista tampoco manda correos automáticos."
+  },
   "notFound": {
     "title": "Página no encontrada",
     "body": "La página que buscas no existe o cambió de dirección.",
@@ -354,14 +363,14 @@
     "emailLabel": "Tu correo electrónico",
     "submit": "Quiero recibirlo",
     "consent": "Acepto recibir correos con lecciones, artículos y avisos de nuevos cursos.",
-    "consentHelp": "Puedes darte de baja cuando quieras con el enlace que aparece en cada correo.",
-    "doubleOptIn": "Te enviaremos un correo para confirmar tu dirección. Hasta que hagas clic en ese enlace no recibirás nada más.",
+    "consentHelp": "Para salir de la lista, escríbeme desde la página de contacto y borro tu correo.",
+    "doubleOptIn": "Tu correo se guarda solo para avisarte. No hay boletín, no hay envíos automáticos y no te escribe nadie más.",
     "privacyNote": "Puedes leer cómo tratamos tus datos en la",
     "noSpam": "Nunca vendemos ni compartimos tu correo.",
     "notConfigured": "[[CORREO — falta conectar el destino. Ver src/config/email.ts]]",
-    "waitlistHeading": "Avísame cuando haya plaza",
-    "waitlistBody": "Nunca doy sesiones con más de cuatro alumnos, así que no siempre hay sitio. Déjame tu correo y te escribo cuando se abra la siguiente tanda. Nada más: no mando boletines ni promociones.",
-    "waitlistConsent": "Acepto que me escriban para avisarme cuando haya plaza en la mentoría.",
+    "waitlistHeading": "Avísame cuando abra el próximo grupo",
+    "waitlistBody": "Cada sesión es de cuatro personas, así que los grupos se forman de uno en uno. Déjame tu correo y te aviso cuando abra el siguiente. Nada más: no mando boletines ni promociones.",
+    "waitlistConsent": "Acepto que me escriban para avisarme cuando abra un grupo nuevo.",
     "waitlistSubmit": "Avísame"
   },
   "disclaimers": {

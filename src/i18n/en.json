@@ -338,6 +338,15 @@
     "supportHeading": "Nothing arrived?",
     "support": "Check your spam folder first — that is where most of these replies end up. If it still is not there, write again from the contact page; the address you left may have had a typo."
   },
+  "waitlistConfirmed": {
+    "title": "You are on the list",
+    "intro": "Your email address is noted. There is nothing else to do for now.",
+    "cta": "Back to homepage",
+    "stepsHeading": "What happens next",
+    "steps": "When a new group opens, Javier writes to the people on this list first. It is an email written by hand, not a newsletter: you will get nothing else in between. If you would rather not wait, you can send your application straight from the contact page.",
+    "supportHeading": "Want to come off the list?",
+    "support": "Write to me from the contact page and I will delete your address. There is no automatic unsubscribe link because this list does not send automatic emails either."
+  },
   "notFound": {
     "title": "Page not found",
     "body": "The page you are looking for does not exist or has moved.",
@@ -354,14 +363,14 @@
     "emailLabel": "Your email address",
     "submit": "Send it to me",
     "consent": "I agree to receive emails with lessons, articles and news about new courses.",
-    "consentHelp": "You can unsubscribe at any time using the link in every email.",
-    "doubleOptIn": "We will send you an email to confirm your address. Until you click that link you will receive nothing else.",
+    "consentHelp": "To come off the list, write to me from the contact page and I will delete your address.",
+    "doubleOptIn": "Your address is kept only so I can tell you. There is no newsletter, nothing is sent automatically, and nobody else writes to you.",
     "privacyNote": "You can read how we handle your data in our",
     "noSpam": "We never sell or share your email address.",
     "notConfigured": "[[EMAIL — destination not connected yet. See src/config/email.ts]]",
-    "waitlistHeading": "Tell me when a place opens",
-    "waitlistBody": "I never teach sessions with more than four students, so there is not always room. Leave your email and I will write when the next intake opens. Nothing else: no newsletter, no promotions.",
-    "waitlistConsent": "I agree to be emailed when a place opens in the mentorship.",
+    "waitlistHeading": "Tell me when the next group opens",
+    "waitlistBody": "Every session is four people, so groups are formed one at a time. Leave your email and I will write when the next one opens. Nothing else: no newsletter, no promotions.",
+    "waitlistConsent": "I agree to be emailed when a new group opens.",
     "waitlistSubmit": "Let me know"
   },
   "disclaimers": {

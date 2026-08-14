@@ -1,0 +1,56 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../config/site';
+import { useTranslations, alternatesForRoute } from '../../i18n/utils';
+import { route } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+{/*
+  Somebody who only left an email address must not land on /gracias, which
+  tells them their application is being read. Two different things happened,
+  so they get two different pages.
+*/}
+<PageLayout
+  title={t('waitlistConfirmed.title')}
+  intro={t('waitlistConfirmed.intro')}
+  alternates={alternatesForRoute('waitlistConfirmed')}
+  noindex
+>
+  <section>
+    <h2 class="text-2xl font-semibold">{t('waitlistConfirmed.stepsHeading')}</h2>
+    <p class="text-body mt-4 leading-relaxed">{t('waitlistConfirmed.steps')}</p>
+    <a
+      href={route('contact', locale)}
+      class="link-quiet mt-6 inline-block text-sm underline"
+    >
+      {t('nav.contact')}
+    </a>
+  </section>
+
+  {/*
+    Netlify Forms sends no email of its own, so it can add no unsubscribe
+    link. Removal is therefore by hand, and the page says so rather than
+    implying a link exists somewhere.
+  */}
+  <section class="border-line mt-14 border-t pt-14">
+    <h2 class="text-2xl font-semibold">
+      {t('waitlistConfirmed.supportHeading')}
+    </h2>
+    <p class="text-body mt-4 leading-relaxed">
+      {t('waitlistConfirmed.support')}
+    </p>
+  </section>
+
+  <p class="mt-14">
+    <a href={route('home', locale)} class="link-quiet text-sm underline">
+      {t('waitlistConfirmed.cta')}
+    </a>
+  </p>
+</PageLayout>

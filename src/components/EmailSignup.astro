@@ -3,7 +3,7 @@ import type { Locale } from '../config/site';
 import { useTranslations } from '../i18n/utils';
 import { route } from '../i18n/routes';
 import { listAction, isListConfigured, type EmailListKey } from '../config/email';
-import { HONEYPOT_FIELD } from '../config/forms';
+import { FORMS, HONEYPOT_FIELD } from '../config/forms';
 
 interface Props {
   list: EmailListKey;
@@ -32,8 +32,17 @@ const {
 } = Astro.props;
 const t = useTranslations(locale);
 
-const action = listAction(list, locale);
-const ready = isListConfigured(list, locale);
+/**
+ * Under Netlify the addresses are collected by Netlify itself and emailed on,
+ * so there is no external provider to configure and nothing to paste into
+ * src/config/email.ts. The `action` then stops being a collector and becomes
+ * the page the reader lands on afterwards.
+ */
+const netlify = FORMS.provider === 'netlify';
+const ready = netlify || isListConfigured(list, locale);
+const action = netlify
+  ? route('waitlistConfirmed', locale)
+  : listAction(list, locale);
 const disabled = !ready;
 
 const field =
@@ -52,7 +61,18 @@ const field =
     )
   }
 
-  <form class="mt-6 space-y-5" method="post" action={ready ? action : undefined}>
+  <form
+    class="mt-6 space-y-5"
+    method="post"
+    action={ready ? action : undefined}
+    name={netlify ? FORMS.waitlistFormName : undefined}
+    data-netlify={netlify ? 'true' : undefined}
+    data-netlify-honeypot={netlify ? HONEYPOT_FIELD : undefined}
+  >
+    {netlify && (
+      <input type="hidden" name="form-name" value={FORMS.waitlistFormName} />
+    )}
+
     {/* Hidden from people, filled in by bots. Discarded by the provider. */}
     <div class="hidden" aria-hidden="true">
       <label for={`hp-${list}`}>Company website</label>

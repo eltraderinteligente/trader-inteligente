@@ -20,6 +20,7 @@ export const ROUTES = {
   about: { es: '/sobre-mi', en: '/en/about' },
   contact: { es: '/contacto', en: '/en/contact' },
   thankYou: { es: '/gracias', en: '/en/thank-you' },
+  waitlistConfirmed: { es: '/en-la-lista', en: '/en/on-the-list' },
   riskDisclosure: { es: '/aviso-de-riesgo', en: '/en/risk-disclosure' },
   terms: { es: '/terminos', en: '/en/terms' },
   privacy: { es: '/privacidad', en: '/en/privacy' },

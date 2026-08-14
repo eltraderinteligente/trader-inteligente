@@ -10,7 +10,12 @@ import sitemap from '@astrojs/sitemap';
 import { SITE } from './src/config/site.ts';
 
 /** Pages rendered with `noindex`. Keep in step with the `noindex` prop. */
-const NOINDEX_PATHS = ['/gracias/', '/en/thank-you/'];
+const NOINDEX_PATHS = [
+  '/gracias/',
+  '/en/thank-you/',
+  '/en-la-lista/',
+  '/en/on-the-list/',
+];
 
 // https://astro.build/config
 export default defineConfig({

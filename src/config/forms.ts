@@ -26,6 +26,7 @@ export const FORMS: {
   provider: Provider;
   contactFormName: string;
   reviewFormName: string;
+  waitlistFormName: string;
   contactAction: string;
   reviewAction: string;
 } = {
@@ -38,6 +39,7 @@ export const FORMS: {
    */
   contactFormName: 'application',
   reviewFormName: 'review',
+  waitlistFormName: 'waitlist',
 
   // Only used when provider is 'endpoint'.
   contactAction: '',
