@@ -4,8 +4,16 @@ export const SITE = {
   // set as the canonical URL or Google will see two sites with one set of pages.
   url: 'https://eltraderinteligente.com',
   name: 'El Trader Inteligente',
-  // [[BUSINESS ENTITY — needs real legal entity name and jurisdiction]]
-  legalEntity: '[[LEGAL ENTITY]]',
+  /**
+   * Who the copyright and the legal pages belong to.
+   *
+   * A person, not a company: Javier operates under his own name and "El Trader
+   * Inteligente" is the trading name, so the two are the same legal party. If a
+   * company is ever registered — an LLC or similar — this becomes the company's
+   * registered name, and the terms and privacy policy have to change with it,
+   * because a contract signed with a company is not a contract with a person.
+   */
+  legalEntity: 'Javier Andrade',
 } as const;
 
 /**

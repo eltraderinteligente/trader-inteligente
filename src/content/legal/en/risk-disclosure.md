@@ -21,13 +21,17 @@ instrument.
 
 ## We are not registered advisers
 
-[[AUTHOR NAME]] is not registered as an investment adviser, broker, dealer, or
+Javier Andrade is not registered as an investment adviser, broker, dealer, or
 Commodity Trading Advisor (CTA) with the Securities and Exchange Commission
 (SEC), the Commodity Futures Trading Commission (CFTC), FINRA, the NFA, or any
 other regulatory body.
 
-[[JURISDICTION — the lawyer must confirm which regulators need to be named here,
-based on where the business is registered and where customers are located]]
+<!-- JURISDICTION — for the lawyer, not for readers. The regulators named above
+are the United States ones, which is right for a business operating from
+Florida. Students are also in Latin America, and some countries there have
+their own registration rules for anyone teaching or advising on markets. The
+lawyer should confirm whether any of them need naming here. Hidden rather than
+deleted so the question survives until it is answered. -->
 
 ## We do not manage or hold funds
 
@@ -89,8 +93,8 @@ The decisions you make in the market are yours. Before trading, consider your
 financial situation, your objectives and your experience, and consult a
 professional properly registered in your jurisdiction.
 
-By using this website you accept that neither [[LEGAL ENTITY]] nor
-[[AUTHOR NAME]] will be liable for any loss or damage arising from the use of
+By using this website you accept that Javier Andrade, trading as El Trader
+Inteligente, will not be liable for any loss or damage arising from the use of
 the content published here.
 
 [[LIMITATION OF LIABILITY — the lawyer must draft the final clause; the

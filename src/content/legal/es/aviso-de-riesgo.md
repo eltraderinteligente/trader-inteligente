@@ -21,13 +21,17 @@ personalizada de compra, venta o mantenimiento de ningún instrumento financiero
 
 ## No somos asesores registrados
 
-[[NOMBRE DEL AUTOR]] no está registrado como asesor de inversiones, broker,
+Javier Andrade no está registrado como asesor de inversiones, broker,
 dealer, ni como Commodity Trading Advisor (CTA) ante la Securities and Exchange
 Commission (SEC), la Commodity Futures Trading Commission (CFTC), FINRA, la NFA
 ni ante ningún otro organismo regulador.
 
-[[JURISDICCIÓN — el abogado debe confirmar qué reguladores hay que nombrar aquí
-según dónde esté registrada la empresa y dónde estén los clientes]]
+<!-- JURISDICCIÓN — para el abogado, no para el lector. Los reguladores
+nombrados arriba son los de Estados Unidos, que es lo correcto para un negocio
+que opera desde Florida. También hay alumnos en Latinoamérica, y algunos países
+tienen sus propias normas de registro para quien enseña o asesora sobre
+mercados. El abogado debe confirmar si hay que nombrar alguno aquí. Se oculta en
+lugar de borrarse para que la pregunta no se pierda. -->
 
 ## No gestionamos ni custodiamos fondos
 
@@ -90,8 +94,9 @@ Las decisiones que tomes en el mercado son tuyas. Antes de operar, considera tu
 situación financiera, tus objetivos y tu experiencia, y consulta a un
 profesional debidamente registrado en tu jurisdicción.
 
-Al usar esta web aceptas que ni [[ENTIDAD LEGAL]] ni [[NOMBRE DEL AUTOR]] serán
-responsables de pérdidas o daños derivados del uso del contenido publicado aquí.
+Al usar esta web aceptas que Javier Andrade, que opera bajo el nombre comercial
+El Trader Inteligente, no será responsable de pérdidas o daños derivados del uso
+del contenido publicado aquí.
 
 [[LIMITACIÓN DE RESPONSABILIDAD — el abogado debe redactar la cláusula
 definitiva; el alcance permitido varía según la jurisdicción]]
