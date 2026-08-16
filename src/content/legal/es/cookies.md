@@ -2,7 +2,7 @@
 title: Política de cookies
 lang: es
 translationKey: cookies
-updatedDate: 2026-08-07
+updatedDate: 2026-08-16
 reviewedByLawyer: false
 ---
 
@@ -32,30 +32,40 @@ Si en el futuro se añade alguna herramienta de medición, este documento se
 actualizará antes de activarla, con el nombre de la herramienta, qué recoge y
 cuánto dura cada cookie.
 
-[[ANALÍTICA — pendiente de decisión. Si se añade, actualizar esta tabla y la
-política de privacidad antes de publicarla.]]
+<!-- ANALÍTICA — no hay ninguna herramienta de medición instalada. Verificado en
+la compilación: la web no carga ningún script de terceros, ni fuentes externas,
+ni imágenes remotas, así que no hay nada que pueda instalar una cookie. Si
+alguna vez se añade una, hay que actualizar esta tabla y la política de
+privacidad antes de activarla. -->
 
-## Cookies de terceros que sí pueden aparecer
+## Cookies de terceros
 
-Algunas partes de la web dependen de servicios externos que pueden instalar sus
-propias cookies cuando interactúas con ellos:
+No hay ninguna.
 
-- **Formularios** (opiniones, contacto): [[SERVICIO DE FORMULARIOS — pendiente
-  de decisión]]
-- **Suscripción por correo**: [[PROVEEDOR DE CORREO — pendiente de decisión]]
-- **Plataforma de cursos y pagos**: [[PLATAFORMA — pendiente de decisión]]. Esta
-  vive en otro dominio; sus cookies se rigen por su propia política.
+Los formularios los gestiona **Netlify** (Netlify, Inc., Estados Unidos), la
+misma empresa que aloja la web, así que enviar uno no te lleva a otra compañía.
+Netlify puede instalar una cookie estrictamente necesaria para proteger sus
+formularios del spam; no contiene datos publicitarios ni de perfilado.
+[Política de privacidad de Netlify](https://www.netlify.com/privacy/).
 
-Cuando estén decididos, hay que nombrarlos aquí con un enlace a su política.
+La web no carga nada más desde ningún otro sitio: ni analítica, ni vídeos
+incrustados, ni tipografías externas, ni botones de redes sociales, ni redes de
+publicidad. Por eso aquí no hay una lista que leerse.
+
+[[PAGOS — todavía no se vende nada desde la web. Un procesador de pagos
+instalará sus propias cookies al cobrar y hay que nombrarlo aquí antes del
+primer pago.]]
 
 ## Cómo cambiar de opinión
 
 Puedes borrar los datos del sitio desde la configuración de tu navegador y el
 aviso volverá a aparecer en tu siguiente visita.
 
-[[GESTIÓN DEL CONSENTIMIENTO — valorar con el abogado si hace falta un enlace
-permanente para revocar el consentimiento; se vuelve obligatorio en cuanto haya
-cookies no esenciales]]
+<!-- GESTIÓN DEL CONSENTIMIENTO — para el abogado. Hoy no hay nada de lo que
+revocar el consentimiento, así que borrar los datos del navegador es respuesta
+suficiente. En cuanto exista una cookie no esencial, pasa a ser obligatorio un
+enlace permanente de "cambiar preferencias de cookies" y hay que reescribir esta
+sección. -->
 
 ## Contacto
 
