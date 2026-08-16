@@ -97,5 +97,9 @@ By using this website you accept that Javier Andrade, trading as El Trader
 Inteligente, will not be liable for any loss or damage arising from the use of
 the content published here.
 
-[[LIMITATION OF LIABILITY — the lawyer must draft the final clause; the
-permitted scope varies by jurisdiction]]
+<!-- LIMITATION OF LIABILITY — for the lawyer, not for readers. The sentence
+above is the whole of it, and it is doing a lot of work for one line: how far a
+disclaimer can actually limit liability is set by law, not by the site, and it
+varies by state and by country. Several jurisdictions void a blanket waiver
+outright. The lawyer should decide whether this needs a proper clause. Hidden
+rather than deleted so the question survives until it is answered. -->

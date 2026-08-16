@@ -98,5 +98,9 @@ Al usar esta web aceptas que Javier Andrade, que opera bajo el nombre comercial
 El Trader Inteligente, no será responsable de pérdidas o daños derivados del uso
 del contenido publicado aquí.
 
-[[LIMITACIÓN DE RESPONSABILIDAD — el abogado debe redactar la cláusula
-definitiva; el alcance permitido varía según la jurisdicción]]
+<!-- LIMITACIÓN DE RESPONSABILIDAD — para el abogado, no para el lector. La
+frase de arriba es todo lo que hay, y es mucha carga para una sola línea: hasta
+dónde puede limitarse la responsabilidad lo fija la ley, no la web, y cambia
+según el estado y el país. Varias jurisdicciones anulan directamente una
+exención general. El abogado debe decidir si hace falta una cláusula formal. Se
+oculta en lugar de borrarse para que la pregunta no se pierda. -->

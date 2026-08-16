@@ -5,15 +5,20 @@ export const SITE = {
   url: 'https://eltraderinteligente.com',
   name: 'El Trader Inteligente',
   /**
-   * Who the copyright and the legal pages belong to.
+   * The name in the copyright line at the foot of every page.
    *
-   * A person, not a company: Javier operates under his own name and "El Trader
-   * Inteligente" is the trading name, so the two are the same legal party. If a
-   * company is ever registered — an LLC or similar — this becomes the company's
-   * registered name, and the terms and privacy policy have to change with it,
-   * because a contract signed with a company is not a contract with a person.
+   * The trading name rather than Javier's own, because that is what a reader
+   * recognises. It is only a credit line — where it actually matters who is
+   * liable, the legal pages name the person, since "El Trader Inteligente" is
+   * a name he trades under and not a registered company that could be sued in
+   * its own right.
+   *
+   * If a company is ever registered — an LLC or similar — this becomes its
+   * exact registered name, and the terms and privacy policy have to change
+   * with it: a customer contracting with a company is not contracting with a
+   * person, and the two carry different liability.
    */
-  legalEntity: 'Javier Andrade',
+  legalEntity: 'El Trader Inteligente',
 } as const;
 
 /**
