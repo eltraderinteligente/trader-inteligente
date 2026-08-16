@@ -16,10 +16,11 @@ Javier Andrade, trading as El Trader Inteligente, operating from Florida,
 United States. You can reach him using the form on the
 [contact page](/en/contact).
 
-[[POSTAL ADDRESS — a data controller has to be reachable offline as well as
-through a form. A PO box or registered agent address is enough; a home address
-should not go on a public page. The lawyer will also want the tax
-identification number here if one is issued.]]
+<!-- POSTAL ADDRESS — not published because there isn't one yet, and a home
+address must never go on this page. A PO box or a registered agent address is
+the fix, and it is worth doing: some payment processors ask for a business
+address on the site, and EU law would require one if EU sales ever became real.
+Not urgent for a Florida business selling to the Americas. -->
 
 ## What we collect, and only when you give it
 
@@ -47,8 +48,11 @@ We never ask for or store card details.
 - **Legitimate interest** for replying to questions and applications.
 - **Performance of a contract** for anything related to a purchase.
 
-[[LEGAL BASES — confirm with the lawyer, especially for customers outside the
-EU, where a different framework applies]]
+<!-- LEGAL BASES — for the lawyer. The three grounds above are GDPR vocabulary,
+which is stricter than anything Florida imposes on a business this size. Kept
+because they describe honestly why each piece of data is held, and a reader in
+Spain or Brazil recognises the framing. Worth confirming rather than assuming
+they map cleanly onto LGPD and the Mexican LFPDPPP. -->
 
 ## Who it is shared with
 
@@ -65,40 +69,87 @@ pass data to third parties for their own marketing.
   Gmail inbox and replies are sent from it. There is no email marketing
   provider, because nothing is ever sent in bulk.
 - **Live classes: Zoom** (Zoom Communications, Inc., United States), used only
-  once you are a student. Sessions are recorded and the recording is shared
-  with the people who were in it.
+  once you are a student.
+- **Class recordings: Google Drive** (Google LLC, United States). Each group's
+  recordings sit in a folder shared only with the students who were in that
+  group. Nobody outside your group is given access, and no recording is
+  published anywhere.
 
 [[PAYMENTS — nothing is sold through the site yet. Whichever processor is used
 must be named here before the first payment is taken, and it will handle card
 details on its own systems.]]
 
-[[RECORDINGS — Javier needs to say where session recordings are stored and
-shared, e.g. Google Drive. That storage holds a student's face and voice, which
-is personal data, so the provider has to be named here.]]
+Every provider above is in the United States, which is also where this business
+operates. This site is written for readers in the United States and Latin
+America and is not aimed at the European Union.
 
-[[INTERNATIONAL TRANSFERS — every provider above is in the United States. If
-there are EU or UK users, the lawyer must state the applicable transfer
-mechanism]]
+<!-- EU TRANSFERS — for the lawyer, and only if EU or UK sales become real
+rather than incidental. The test is whether the business "directs activities" at
+those markets, and a Spanish-language site selling to the Americas is a weak
+case for that. If it changes, a transfer mechanism has to be named here. -->
+
+## Recording the classes
+
+Every live session is recorded, and the recording is shared afterwards with the
+people who were in that session. You will be told this before you enrol and
+again at the start of each class, and Zoom shows its own recording indicator
+throughout.
+
+Florida law requires everyone in a recorded conversation to consent to it,
+which is why your agreement is asked for in writing at enrolment rather than
+assumed. If you do not want to be recorded, say so before you enrol — the
+recording is there so students can review a class they attended, and it is not
+worth anyone being uncomfortable over.
+
+Recordings are never sold, never used in advertising, and never shown to
+another group.
 
 ## How long it is kept
 
-[[RETENTION PERIODS — a business decision the lawyer must formalise: how long
-to keep the addresses of people who unsubscribed, unpublished reviews, and
-contact messages]]
+| What | How long | Why |
+| :--- | :--- | :--- |
+| Waitlist address | Until you ask to come off it, or until the list stops being used | It exists to tell you about one thing |
+| Questions and applications | Up to 12 months after the conversation ends | Long enough to pick up a thread, then gone |
+| Reviews | For as long as the review is published, and deleted if you withdraw it | |
+| Class recordings | 12 months after the group finishes, then deleted | Long enough to revise from |
+| Payment and tax records for enrolled students | 7 years | Required for tax, and not a choice |
+
+Nothing here is kept "just in case". Where a period is a choice rather than a
+legal duty, it is set short deliberately: data that has been deleted cannot be
+lost in a breach.
 
 ## Your rights
 
-You can request access, correction, deletion, restriction, portability and
-objection by writing to us using the form on the
-[contact page](/en/contact).
+You can ask to see the data held about you, to have it corrected, or to have it
+deleted, using the form on the [contact page](/en/contact). Requests are
+answered within 30 days.
 
-[[RIGHTS — the list and the deadlines change depending on the applicable law
-(GDPR, CCPA and Latin American equivalents). The lawyer must adjust this.]]
+This is offered to everyone who asks, whichever country you are in. It is worth
+being straight about why: this is a one-person business that is far too small to
+be captured by Florida's Digital Bill of Rights, by California's privacy law, or
+by most of the statutes that would otherwise force the point. The rights above
+are given because they are reasonable, not because a regulator is watching.
+
+<!-- RIGHTS — for the lawyer. Deadlines and the exact list vary by law (GDPR,
+CCPA, LGPD in Brazil, the Mexican LFPDPPP). 30 days is the common denominator
+and is the shortest of them; confirm before relying on it. -->
+
+## If something goes wrong
+
+If data held here is ever exposed — a breached account, a mistaken share — you
+will be told, and within 30 days. Florida law requires this of every business
+regardless of size, sole traders included, and it is the right thing to do in
+any case.
 
 ## Minors
 
-[[MINIMUM AGE — decide and state the minimum age to use the site and to buy.
-This matters given the subject matter.]]
+You must be at least 18 to buy the mentorship. That is the age at which a
+contract signed in Florida binds the person who signed it, so a purchase by
+anyone younger is not something this business can rely on.
+
+The site is not aimed at children and no data is knowingly collected from
+anyone under 13. If you believe a child has sent something through a form here,
+write from the [contact page](/en/contact) and it will be deleted.
 
 ## Changes
 
