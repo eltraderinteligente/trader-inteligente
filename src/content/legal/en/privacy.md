@@ -75,6 +75,14 @@ pass data to third parties for their own marketing.
   group. Nobody outside your group is given access, and no recording is
   published anywhere.
 
+<!-- GOOGLE ACCOUNT TIER — the recordings currently sit in a free personal
+Google account. That is worth changing. On a free account Google is not
+contractually anyone's data processor and there is no data processing agreement
+behind the files; paid Google Workspace includes one, under which Google commits
+to act as processor and not to mine the content. For files holding a student's
+face and voice that is the difference between a promise and a contract. Roughly
+seven dollars a month. Once moved, name it here as "Google Workspace". -->
+
 [[PAYMENTS — nothing is sold through the site yet. Whichever processor is used
 must be named here before the first payment is taken, and it will handle card
 details on its own systems.]]

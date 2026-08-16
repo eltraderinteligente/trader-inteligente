@@ -77,6 +77,15 @@ vendemos ni cedemos datos a terceros para su propio marketing.
   alumnos de ese grupo. Nadie de fuera de tu grupo tiene acceso y ninguna
   grabación se publica en ningún sitio.
 
+<!-- TIPO DE CUENTA DE GOOGLE — las grabaciones están hoy en una cuenta de
+Google personal y gratuita. Conviene cambiarlo. En una cuenta gratuita Google no
+es contractualmente el encargado del tratamiento de nadie y no hay contrato de
+encargo detrás de los archivos; Google Workspace de pago sí lo incluye, y ahí
+Google se compromete a actuar como encargado y a no explotar el contenido. Para
+archivos con la cara y la voz de un alumno, esa es la diferencia entre una
+promesa y un contrato. Unos siete dólares al mes. Cuando se cambie, nombrarlo
+aquí como "Google Workspace". -->
+
 [[PAGOS — todavía no se vende nada desde la web. Haya el procesador que haya,
 hay que nombrarlo aquí antes de cobrar el primer pago, y será él quien trate los
 datos de tarjeta en sus propios sistemas.]]

@@ -2,7 +2,7 @@
 title: Términos y condiciones
 lang: es
 translationKey: terms
-updatedDate: 2026-08-07
+updatedDate: 2026-08-16
 reviewedByLawyer: false
 ---
 
@@ -12,8 +12,15 @@ abogado. No lo publiques tal cual.
 
 ## Quién opera esta web
 
-[[ENTIDAD LEGAL — nombre completo, forma jurídica, domicilio, identificación
-fiscal y correo de contacto]]
+Javier Andrade, autónomo con base en Florida (Estados Unidos), que opera bajo el
+nombre El Trader Inteligente. Es la persona con la que contratas: no hay ninguna
+sociedad entre él y tú. Puedes escribirle desde el formulario de la
+[página de contacto](/contacto).
+
+<!-- DOMICILIO E IDENTIFICACIÓN FISCAL — no se publican. Todavía no hay apartado
+de correos y una dirección particular no puede ir aquí. Si algún día se
+constituye una LLC, este apartado cambia por completo: la contraparte pasa a ser
+la sociedad y no Javier. -->
 
 ## Qué se vende exactamente
 
@@ -51,18 +58,50 @@ Lo que sí hay es la posibilidad de parar en cualquier momento, que es lo que
 hace innecesaria una garantía de devolución: nadie está obligado a pagar por
 adelantado un periodo que no ha usado.
 
-[[REEMBOLSOS — revisión del abogado. Falta decidir cómo tratar a un comprador
-residente en la UE o el Reino Unido: sobre servicios contratados a distancia
-existe un derecho de desistimiento de 14 días, con excepciones cuando el
-servicio ya ha empezado a prestarse con el consentimiento expreso del cliente.
-Si se va a vender a residentes de la UE, esa renuncia debe recogerse en el
-momento de la contratación.]]
+Si cancelas antes de la primera sesión de un grupo al que te has apuntado, ese
+pago se devuelve íntegro.
+
+Esta web está pensada para lectores de Estados Unidos y Latinoamérica. Si
+resides en la Unión Europea o el Reino Unido, la ley de allí te da catorce días
+para desistir de un servicio contratado a distancia, y se respeta: solo se te
+cobrarían las sesiones ya impartidas. Como el cobro es mensual y no por
+adelantado, eso supone como mucho un mes en cualquier caso.
+
+<!-- REEMBOLSOS — para el abogado. El derecho de desistimiento europeo sobre un
+*servicio* no se extingue porque el cliente consienta la ejecución inmediata;
+esa renuncia solo funciona para contenido digital. En un servicio termina cuando
+está completamente prestado, y un curso de tres meses no lo está. De ahí el
+prorrateo de arriba en lugar de una renuncia. El cobro mensual limita la
+exposición a un mes, que es por lo que esto es un párrafo y no un problema. -->
+
+## Grabación de las sesiones
+
+Todas las sesiones en vivo se graban y después se comparten con los alumnos que
+estuvieron en ellas, para que puedan repasarlas.
+
+La ley de Florida exige que todas las personas que participan en una
+conversación grabada estén de acuerdo. Por eso se te pide por escrito al
+matricularte, se te recuerda al empezar cada sesión y Zoom muestra su propio
+indicador de grabación durante toda la clase. Si prefieres que no te graben,
+dilo antes de matricularte.
+
+Las grabaciones se comparten solo con tu grupo. No se venden nunca, no se usan
+en publicidad y no se enseñan a otro grupo.
 
 ## Propiedad intelectual
 
-[[PROPIEDAD INTELECTUAL — el material es tuyo; hay que declarar que la compra da
-una licencia de uso personal e intransferible, prohibir la reventa, la
-grabación y la difusión, y decidir qué pasa si alguien comparte sus claves]]
+El material del curso, las grabaciones y todo lo publicado en esta web son de
+Javier Andrade. Comprar una plaza en la mentoría te da una licencia personal e
+intransferible para usar ese material y aprender de él. No te transfiere la
+propiedad de nada.
+
+Esa licencia no te permite revenderlo, publicarlo, compartirlo fuera de tu
+grupo, subirlo a ningún sitio ni hacer tu propia grabación de una sesión. Tu
+acceso es tuyo y no se cede a nadie.
+
+Nada de esto pretende impedirte usar lo que aprendas. La estructura de mercado
+no es propiedad de nadie: opera con ella, enséñasela a un amigo, constrúyele
+encima. Lo que está protegido es el material, no las ideas que contiene.
 
 ## Conducta y acceso
 
@@ -86,9 +125,9 @@ enlaces son enlaces de afiliado de Amazon: si compras a través de ellos, Amazon
 paga una comisión al titular de esta web. El precio que pagas es exactamente el
 mismo que si entras a Amazon por tu cuenta.
 
-Los libros de esa lista están ahí porque el autor de esta web los leyó y los
-recomienda. La comisión no decide qué entra en la lista, y hay títulos en ella
-sin ningún enlace.
+La comisión no decide qué entra en esa lista. Hay títulos en ella sin ningún
+enlace, que es la prueba más clara de ello: un libro que Amazon no vende sigue
+estando en la lista.
 
 Amazon vende y envía esos libros. Esta web no interviene en la compra: las
 devoluciones, los envíos y la atención al cliente son entre tú y Amazon.
