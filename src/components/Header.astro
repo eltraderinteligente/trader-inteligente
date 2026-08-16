@@ -13,10 +13,18 @@ const { alternates } = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 
+/**
+ * Order is deliberate: the offer first, then the free material anyone can
+ * read without asking, then who is behind it, then the way in. Resources sits
+ * beside Blog because both are things given away rather than sold, and
+ * Contact stays last because it is the one item that asks something of the
+ * reader.
+ */
 const NAV: { key: RouteKey; label: TranslationKey }[] = [
   { key: 'mentoring', label: 'nav.mentoring' },
   { key: 'faq', label: 'nav.faq' },
   { key: 'blog', label: 'nav.blog' },
+  { key: 'guides', label: 'nav.guides' },
   { key: 'about', label: 'nav.about' },
   { key: 'contact', label: 'nav.contact' },
 ];
