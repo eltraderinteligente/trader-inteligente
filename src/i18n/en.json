@@ -56,7 +56,7 @@
     "empty": "There is no published content here yet."
   },
   "meta": {
-    "defaultDescription": "Market structure training taught by Javier Andrade, a licensed Florida contractor who has been trading for fifteen years. Educational content only, with no promises of results."
+    "defaultDescription": "Market structure training taught by Javier Andrade, a licensed Florida contractor who has been trading for more than fifteen years. Educational content only, with no promises of results."
   },
   "home": {
     "hero": {
@@ -71,7 +71,7 @@
     },
     "about": {
       "heading": "Who is behind this",
-      "body": "I did not come from finance. I came from construction: I started very young and became a licensed general contractor and plumbing contractor in Florida. I have been trading for fifteen years, tried many methods, and learned most of it the hard way. In the end I kept one approach: market structure.",
+      "body": "I did not come from finance. I came from construction: I started very young and became a licensed general contractor and plumbing contractor in Florida. I have been trading for more than fifteen years, tried many methods, and learned most of it the hard way. In the end I kept one approach: market structure.",
       "cta": "More about me"
     },
     "reviews": {
@@ -268,13 +268,13 @@
   },
   "about": {
     "title": "About me",
-    "intro": "My name is Javier Andrade, I live in Florida, and I have been trading the markets for fifteen years. I did not come from finance.",
+    "intro": "My name is Javier Andrade and I live in Florida. I did not come from finance.",
     "photoAlt": "Javier Andrade",
     "photoPending": "[[PHOTO — needs a real photo of Javier. No stock images.]]",
     "storyHeading": "Where I come from",
-    "story": "I started working in construction very young. Over the years I earned two Florida licences: general contractor and plumbing contractor. That means estimates that add up or do not, deadlines you meet or you do not, and jobs where the person who gets it wrong pays for it themselves. That is where I learned to work with a method, long before I knew what a chart was.",
+    "story": "I have been trading the markets for more than fifteen years, but that is not where I started. I started working in construction very young. Over the years I earned two Florida licences: general contractor and plumbing contractor. That means estimates that add up or do not, deadlines you meet or you do not, and jobs where the person who gets it wrong pays for it themselves. That is where I learned to work with a method, long before I knew what a chart was.",
     "marketsHeading": "How I got to the markets",
-    "markets": "I came to the markets fifteen years ago and, like almost everyone, I started by trying everything: indicators, systems, strategies that worked for a month and stopped working the next. I learned most of it the hard way, by losing. I do not tell you that as an anecdote. I tell you because it is the part almost nobody teaches, and it is exactly what you are going to go through.",
+    "markets": "I came to the markets more than fifteen years ago and, like almost everyone, I started by trying everything: indicators, systems, strategies that worked for a month and stopped working the next. I learned most of it the hard way, by losing. I do not tell you that as an anecdote. I tell you because it is the part almost nobody teaches, and it is exactly what you are going to go through.",
     "methodHeading": "Why I only teach one thing",
     "method": "Over time I was left with a single approach: market structure. Not because it is magic, but because it was the only thing that kept working when the market changed, or the asset changed, or the year changed. It is the same chart everyone else is looking at, read differently, and it works the same in stocks, futures, forex or crypto. That is what I teach, and nothing else. I would rather you leave knowing how to do one thing properly than having skimmed twenty.",
     "teachingHeading": "How I teach",

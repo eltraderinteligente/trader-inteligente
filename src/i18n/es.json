@@ -56,7 +56,7 @@
     "empty": "Todavía no hay contenido publicado aquí."
   },
   "meta": {
-    "defaultDescription": "Formación en estructura de mercado impartida por Javier Andrade, contratista con licencia en Florida y operador desde hace quince años. Contenido exclusivamente educativo, sin promesas de resultados."
+    "defaultDescription": "Formación en estructura de mercado impartida por Javier Andrade, contratista con licencia en Florida y operador desde hace más de quince años. Contenido exclusivamente educativo, sin promesas de resultados."
   },
   "home": {
     "hero": {
@@ -71,7 +71,7 @@
     },
     "about": {
       "heading": "Quién está detrás",
-      "body": "No vengo de las finanzas. Vengo de la construcción: empecé muy joven y llegué a ser contratista general y contratista de plomería con licencia en Florida. Llevo quince años operando, he probado muchos métodos y casi todo lo aprendí a las malas. Al final me quedé con uno solo: estructura de mercado.",
+      "body": "No vengo de las finanzas. Vengo de la construcción: empecé muy joven y llegué a ser contratista general y contratista de plomería con licencia en Florida. Llevo más de quince años operando, he probado muchos métodos y casi todo lo aprendí a las malas. Al final me quedé con uno solo: estructura de mercado.",
       "cta": "Más sobre mí"
     },
     "reviews": {
@@ -268,13 +268,13 @@
   },
   "about": {
     "title": "Sobre mí",
-    "intro": "Me llamo Javier Andrade, vivo en Florida y llevo quince años operando los mercados. No vengo de las finanzas.",
+    "intro": "Me llamo Javier Andrade y vivo en Florida. No vengo de las finanzas.",
     "photoAlt": "Javier Andrade",
     "photoPending": "[[FOTO — falta una foto real de Javier. Sin foto de banco de imágenes.]]",
     "storyHeading": "De dónde vengo",
-    "story": "Empecé a trabajar en la construcción muy joven. Con los años saqué dos licencias en Florida: contratista general y contratista de plomería. Eso significa presupuestos que cuadran o no cuadran, plazos que se cumplen o no se cumplen, y trabajos donde el que se equivoca lo paga de su bolsillo. Ahí aprendí a trabajar con método antes de saber lo que era un gráfico.",
+    "story": "Llevo más de quince años operando los mercados, pero no es donde empecé. Empecé a trabajar en la construcción muy joven. Con los años saqué dos licencias en Florida: contratista general y contratista de plomería. Eso significa presupuestos que cuadran o no cuadran, plazos que se cumplen o no se cumplen, y trabajos donde el que se equivoca lo paga de su bolsillo. Ahí aprendí a trabajar con método antes de saber lo que era un gráfico.",
     "marketsHeading": "Cómo llegué a los mercados",
-    "markets": "Llegué a los mercados hace quince años, y como casi todo el mundo, empecé probando de todo: indicadores, sistemas, estrategias que funcionaban un mes y dejaban de funcionar al siguiente. Aprendí casi todo a las malas, perdiendo. No lo cuento como anécdota: lo cuento porque es la parte que casi nadie enseña y es exactamente por donde vas a pasar tú.",
+    "markets": "Llegué a los mercados hace más de quince años, y como casi todo el mundo, empecé probando de todo: indicadores, sistemas, estrategias que funcionaban un mes y dejaban de funcionar al siguiente. Aprendí casi todo a las malas, perdiendo. No lo cuento como anécdota: lo cuento porque es la parte que casi nadie enseña y es exactamente por donde vas a pasar tú.",
     "methodHeading": "Por qué solo enseño una cosa",
     "method": "Con el tiempo me quedé con un solo enfoque: la estructura de mercado. No porque sea mágica, sino porque es lo único que me siguió sirviendo cuando cambiaba el mercado, el activo o el año. Es el mismo gráfico que ve todo el mundo, leído de otra forma, y funciona igual en acciones, futuros, divisas o cripto. Enseño eso y nada más. Prefiero que salgas sabiendo hacer una cosa bien a que salgas habiendo visto veinte por encima.",
     "teachingHeading": "Cómo enseño",

@@ -38,15 +38,13 @@ const SECTIONS = [
   alternates={alternatesForRoute('about')}
 >
   {/*
-    Deliberately a marked gap rather than a stock photo or an illustrated
-    avatar. A stranger's face here would be worse than no face at all, and a
-    placeholder that looks finished is a placeholder that ships.
+    A photo belongs here and the page is better with one — a mentorship is
+    bought from a person, not a brand. It is left out rather than filled in
+    because the only wrong answer is a stranger's face: a stock photo on this
+    page would undo everything the rest of it says. The `photoAlt` and
+    `photoPending` strings are kept in both locale files, so putting a real
+    photo back is a matter of restoring this block.
   */}
-  <div
-    class="border-line bg-panel-raised text-muted flex min-h-40 items-center justify-center rounded-md border border-dashed p-6 text-center text-sm"
-  >
-    {t('about.photoPending')}
-  </div>
 
   {
     SECTIONS.map((key) => (
