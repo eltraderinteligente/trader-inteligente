@@ -236,6 +236,35 @@ const helpClass = 'text-muted mt-1 text-xs';
       <p class={`${helpClass} ml-7`}>{t('contact.apply.form.consentHelp')}</p>
     </div>
 
+    {/*
+      Recording consent, asked here rather than buried in the terms.
+
+      Florida requires every party to a recorded conversation to agree to it,
+      and students dial in from other states and countries that have their own
+      rules, so the agreement has to be written down somewhere to be worth
+      anything. This is the earliest point at which that is possible: nobody
+      reaches a session without applying first, and Netlify keeps the answer
+      with a timestamp against the submission.
+
+      It is a separate box from the one above on purpose. Bundling "answer my
+      application" and "record my face and voice" into a single tick would be
+      consent to neither.
+    */}
+    <div>
+      <label class="text-body flex items-start gap-3 text-sm">
+        <input
+          type="checkbox"
+          name="recording-consent"
+          value="yes"
+          required
+          disabled={disabled}
+          class="accent-action mt-1"
+        />
+        <span>{t('contact.apply.form.recording')}</span>
+      </label>
+      <p class={`${helpClass} ml-7`}>{t('contact.apply.form.recordingHelp')}</p>
+    </div>
+
     <button
       type="submit"
       disabled={disabled}

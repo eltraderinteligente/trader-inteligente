@@ -80,10 +80,10 @@ Todas las sesiones en vivo se graban y después se comparten con los alumnos que
 estuvieron en ellas, para que puedan repasarlas.
 
 La ley de Florida exige que todas las personas que participan en una
-conversación grabada estén de acuerdo. Por eso se te pide por escrito al
-matricularte, se te recuerda al empezar cada sesión y Zoom muestra su propio
-indicador de grabación durante toda la clase. Si prefieres que no te graben,
-dilo antes de matricularte.
+conversación grabada estén de acuerdo. Por eso se te pide por escrito en el
+formulario de solicitud, antes de entrar a ninguna sesión. Se te recuerda al
+empezar cada clase y Zoom muestra su propio indicador de grabación durante toda
+la sesión. Si prefieres que no te graben, dilo en la solicitud y lo hablamos.
 
 Las grabaciones se comparten solo con tu grupo. No se venden nunca, no se usan
 en publicidad y no se enseñan a otro grupo.

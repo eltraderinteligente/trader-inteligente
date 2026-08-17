@@ -102,15 +102,16 @@ débil. Si eso cambia, hay que nombrar aquí un mecanismo de transferencia. -->
 ## Grabación de las clases
 
 Todas las sesiones en vivo se graban, y la grabación se comparte después con
-quienes estuvieron en esa sesión. Se te dice antes de matricularte y otra vez al
+quienes estuvieron en esa sesión. Se te dice en la solicitud y otra vez al
 empezar cada clase, y Zoom muestra su propio indicador de grabación durante toda
 la sesión.
 
 La ley de Florida exige que todas las personas de una conversación grabada den
-su consentimiento, y por eso se te pide por escrito al matricularte en lugar de
-darlo por supuesto. Si no quieres que te graben, dilo antes de matricularte: la
-grabación está para que puedas repasar una clase a la que asististe, y no merece
-la pena que nadie esté incómodo por ella.
+su consentimiento, y por eso se te pide por escrito en el formulario de
+solicitud, antes de entrar a ninguna sesión, en lugar de darlo por supuesto. Si
+no quieres que te graben, dilo ahí y lo hablamos: la grabación está para que
+puedas repasar una clase a la que asististe, y no merece la pena que nadie esté
+incómodo por ella.
 
 Las grabaciones no se venden nunca, no se usan en publicidad y no se enseñan a
 otro grupo.

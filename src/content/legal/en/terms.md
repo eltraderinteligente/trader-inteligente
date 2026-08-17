@@ -78,10 +78,10 @@ Every live session is recorded and shared afterwards with the students who were
 in it, so they can go back over it.
 
 Florida law requires everyone taking part in a recorded conversation to agree
-to it. Your agreement is therefore asked for in writing when you enrol, you are
-told again at the start of each session, and Zoom displays its own recording
-indicator throughout. If you would rather not be recorded, say so before you
-enrol.
+to it. Your agreement is therefore asked for in writing on the application form,
+before you ever join a session. You are told again at the start of each one, and
+Zoom displays its own recording indicator throughout. If you would rather not be
+recorded, say so on the application and we will talk about it.
 
 Recordings are shared only with your own group. They are never sold, never used
 in advertising, and never shown to another group.

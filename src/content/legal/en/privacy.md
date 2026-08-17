@@ -104,10 +104,11 @@ again at the start of each class, and Zoom shows its own recording indicator
 throughout.
 
 Florida law requires everyone in a recorded conversation to consent to it,
-which is why your agreement is asked for in writing at enrolment rather than
-assumed. If you do not want to be recorded, say so before you enrol — the
-recording is there so students can review a class they attended, and it is not
-worth anyone being uncomfortable over.
+which is why your agreement is asked for in writing on the application form,
+before you ever join a session, rather than assumed. If you do not want to be
+recorded, say so there and we will talk about it — the recording is only so
+students can review a class they attended, and it is not worth anyone being
+uncomfortable over.
 
 Recordings are never sold, never used in advertising, and never shown to
 another group.

@@ -316,6 +316,8 @@
         "availabilityHelp": "Aproximado. El horario se ajusta entre las cuatro personas del grupo.",
         "consent": "Acepto que me escribas a este correo para responder a mi solicitud.",
         "consentHelp": "Solo para eso. No te apunto a ninguna lista ni te mando promociones.",
+        "recording": "Entiendo que las sesiones en vivo se graban y acepto que me graben.",
+        "recordingHelp": "La grabación va solo a los alumnos de tu grupo, para que quien falte a una clase pueda ponerse al día. No se vende nunca, no se usa en publicidad y no se enseña a otro grupo. La ley de Florida exige que todos los presentes estén de acuerdo, y por eso es una casilla y no una línea en la letra pequeña. Si prefieres que no te graben, dímelo en el cuadro de arriba y lo hablamos.",
         "submit": "Enviar solicitud"
       }
     },

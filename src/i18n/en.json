@@ -316,6 +316,8 @@
         "availabilityHelp": "Roughly. The schedule gets settled between the four people in the group.",
         "consent": "I agree to you emailing me at this address to answer my application.",
         "consentHelp": "For that only. You are not added to any list and you will not get promotions.",
+        "recording": "I understand the live sessions are recorded, and I agree to being recorded.",
+        "recordingHelp": "The recording goes only to the students in your group, so anyone who misses a class can catch up. It is never sold, never used in advertising and never shown to another group. Florida law needs everyone in the room to agree, which is why it is a box and not a line in the small print. If you would rather not be recorded, say so in the box above and we will talk about it.",
         "submit": "Send application"
       }
     },
