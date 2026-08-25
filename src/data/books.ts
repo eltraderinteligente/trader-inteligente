@@ -40,19 +40,22 @@ export interface Book {
 }
 
 /**
- * The Amazon Associates tracking tag, e.g. 'eltraderintel-20'.
+ * The Amazon Associates tracking tag for the amazon.com store.
  *
- * Empty on purpose — Javier has to apply for the programme himself and
- * Amazon only approves sites that are already live. Nothing here may be
- * invented, and a wrong tag silently sends the commission to a stranger.
+ * Javier's own, taken from his Associates account. The `-20` on the end is the
+ * suffix Amazon adds itself for the United States store — a tag for amazon.es
+ * or amazon.com.mx would end differently and would earn nothing here.
  *
- * While this is empty, book links point at plain Amazon URLs with no tracking
- * and the disclosure text is hidden, because there is nothing to disclose yet.
+ * Setting this to a non-empty value is what switches the whole affiliate layer
+ * on: the disclosure paragraph appears above the list and every link is marked
+ * as an affiliate link. Empty it again and the site goes back to plain Amazon
+ * URLs with no tracking and no disclosure, because there is then nothing to
+ * disclose.
  *
- * [[AMAZON — falta el tag de asociado. Se pega aquí después de que Amazon
- * apruebe la cuenta.]]
+ * It is not a secret. It travels in the URL of every link on the page, so it
+ * belongs in the code rather than in an environment variable.
  */
-export const AMAZON_TAG = '';
+export const AMAZON_TAG = 'eltraderintel-20';
 
 /** Whether affiliate links are switched on. Drives the disclosure text too. */
 export const isAffiliate = AMAZON_TAG.length > 0;
@@ -101,6 +104,7 @@ export const BOOKS: Book[] = [
   {
     title: 'Reminiscences of a Stock Operator',
     author: 'Edwin Lefèvre',
+    asin: '0471770884',
     note: {
       es: 'Publicado en 1923 y todavía se cita, porque lo que describe no es una técnica sino cómo se comporta la gente cuando hay dinero de por medio. Se lee como una novela. Es el más fácil de la lista para empezar.',
       en: 'Published in 1923 and still quoted, because what it describes is not a technique but how people behave when money is involved. It reads like a novel. The easiest one here to start with.',
@@ -109,6 +113,7 @@ export const BOOKS: Book[] = [
   {
     title: 'Trading in the Zone',
     author: 'Mark Douglas',
+    asin: '0735201447',
     note: {
       es: 'Sobre la parte psicológica: por qué alguien que sabe lo que tiene que hacer acaba haciendo otra cosa delante de la pantalla. Es el libro de disciplina que casi todo el mundo en esto acaba citando.',
       en: 'About the psychological side: why someone who knows what to do ends up doing something else once they are in front of the screen. It is the discipline book almost everyone in this field ends up citing.',
