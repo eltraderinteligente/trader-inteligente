@@ -120,14 +120,16 @@ estos términos.
 
 ## Enlaces de afiliado
 
-En la página de [recursos](/recursos) hay libros recomendados. Algunos de esos
-enlaces son enlaces de afiliado de Amazon: si compras a través de ellos, Amazon
-paga una comisión al titular de esta web. El precio que pagas es exactamente el
-mismo que si entras a Amazon por tu cuenta.
+En la página de [recursos](/recursos) hay libros recomendados, y esos enlaces son
+enlaces de afiliado de Amazon: si compras a través de ellos, Amazon paga una
+comisión al titular de esta web. El precio que pagas es exactamente el mismo que
+si entras a Amazon por tu cuenta. Todos van marcados como enlace de afiliado allí
+donde aparecen, para que no tengas que fiarte de lo que diga esta página.
 
-La comisión no decide qué entra en esa lista. Hay títulos en ella sin ningún
-enlace, que es la prueba más clara de ello: un libro que Amazon no vende sigue
-estando en la lista.
+La comisión no decide qué entra en esa lista. Los libros se eligieron y se
+comentaron antes de que existiera ninguna cuenta de Amazon, y desde entonces no
+se ha añadido ninguno. Cuando un libro es duro de leer o mal sitio para empezar,
+la nota que lo acompaña lo dice en lugar de vendértelo.
 
 Amazon vende y envía esos libros. Esta web no interviene en la compra: las
 devoluciones, los envíos y la atención al cliente son entre tú y Amazon.

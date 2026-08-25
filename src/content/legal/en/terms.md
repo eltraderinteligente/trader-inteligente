@@ -117,14 +117,16 @@ terms.
 
 ## Affiliate links
 
-The [resources](/en/resources) page lists recommended books. Some of those links
-are Amazon affiliate links: if you buy through one, Amazon pays a commission to
-the operator of this website. The price you pay is exactly the same as going to
-Amazon yourself.
+The [resources](/en/resources) page lists recommended books, and those links are
+Amazon affiliate links: if you buy through one, Amazon pays a commission to the
+operator of this website. The price you pay is exactly the same as going to
+Amazon yourself. Every one of them is marked as an affiliate link where it
+appears, so you never have to take this page's word for it.
 
-The commission does not decide what goes on that list. Some titles on it carry
-no link at all, which is the plainest evidence of that: a book Amazon does not
-sell is on the list anyway.
+The commission does not decide what goes on that list. The books were chosen and
+written up before there was any Amazon account, and none has been added since.
+Where a book is hard going or a poor place to start, the note beside it says so
+instead of selling it to you.
 
 Amazon sells and ships those books. This website is not part of the transaction:
 returns, shipping and customer service are between you and Amazon.

@@ -122,6 +122,7 @@ export const BOOKS: Book[] = [
   {
     title: 'Technical Analysis of the Financial Markets',
     author: 'John J. Murphy',
+    asin: '0735200661',
     note: {
       es: 'El manual de referencia, y se nota: es denso y no se lee de una sentada. Sirve para consultar cuando aparece un concepto que no conoces, más que para leer de principio a fin. Hay edición en español.',
       en: 'The reference textbook, and it reads like one: dense, and not something to get through in one sitting. It works better as something to look things up in than as a book to read cover to cover.',
@@ -138,6 +139,7 @@ export const BOOKS: Book[] = [
   {
     title: 'The Daily Trading Coach',
     author: 'Brett N. Steenbarger',
+    asin: '0470398566',
     note: {
       es: 'Psicología práctica repartida en 101 capítulos cortos, pensados para leer uno al día. Encaja bien con alguien que está haciendo ejercicios cada semana y quiere algo corto entre medias.',
       en: 'Practical psychology split into 101 short chapters, meant to be read one a day. It suits someone working through exercises each week who wants something short in between.',
@@ -149,14 +151,6 @@ export const BOOKS: Book[] = [
     note: {
       es: 'No es un libro de trading y por eso está aquí. Explica por qué el cerebro toma malas decisiones cuando hay incertidumbre y dinero de por medio, que es exactamente la situación en la que vas a estar. Escrito por un premio Nobel de economía.',
       en: 'Not a trading book, which is why it is on the list. It explains why the brain makes poor decisions under uncertainty when money is involved, which is precisely the situation you will be in. Written by a Nobel laureate in economics.',
-    },
-  },
-  {
-    title: 'Trading Price Action Trends',
-    author: 'Al Brooks',
-    note: {
-      es: 'Lo más cercano a estructura de mercado que hay publicado. Aviso: es genuinamente difícil de leer, incluso para gente con experiencia. Déjalo para el final, y no lo cojas como primer libro.',
-      en: 'The closest thing in print to market structure. A warning: it is genuinely hard reading, even for people with experience. Leave it until last, and do not make it your first book.',
     },
   },
 ];
