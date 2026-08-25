@@ -131,6 +131,7 @@ export const BOOKS: Book[] = [
   {
     title: 'Market Wizards',
     author: 'Jack D. Schwager',
+    asin: '1804093637',
     note: {
       es: 'Entrevistas con operadores que usan métodos que se contradicen entre sí y a los que les fue bien igualmente. Es útil precisamente por eso: deja claro que no hay un único camino correcto, algo que cuesta ver cuando se empieza.',
       en: 'Interviews with traders whose methods contradict one another and who did well anyway. That is exactly what makes it useful: it makes clear there is no single right way, which is hard to see when you are starting.',
@@ -148,6 +149,7 @@ export const BOOKS: Book[] = [
   {
     title: 'Thinking, Fast and Slow',
     author: 'Daniel Kahneman',
+    asin: '9123951494',
     note: {
       es: 'No es un libro de trading y por eso está aquí. Explica por qué el cerebro toma malas decisiones cuando hay incertidumbre y dinero de por medio, que es exactamente la situación en la que vas a estar. Escrito por un premio Nobel de economía.',
       en: 'Not a trading book, which is why it is on the list. It explains why the brain makes poor decisions under uncertainty when money is involved, which is precisely the situation you will be in. Written by a Nobel laureate in economics.',
